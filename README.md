@@ -1,5 +1,7 @@
 # Bulls-Bears
 **iOS Developer Nanodegree Final Project**
+
+
 **Bulls and Bears** is a stock quote app that uses the _Yahoo Finance API_ to request stock data for a searched company
 
 
