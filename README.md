@@ -17,7 +17,7 @@
 
 
 ## Installation
-Simply run `pod install` from terminal and open **.xcworkspace** instead of .xcodeproj
+Run `pod install` from terminal and open **.xcworkspace** instead of .xcodeproj
 
 
 
