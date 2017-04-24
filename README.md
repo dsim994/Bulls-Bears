@@ -1,5 +1,6 @@
 # Bulls-Bears
 **iOS Developer Nanodegree Final Project**
+**Bulls and Bears** is a stock quote app that uses the _Yahoo Finance API_ to request stock data for a searched company
 
 
 
@@ -17,7 +18,15 @@ Simply run 'pod install' from terminal and open **.xcworkspace** instead of .xco
 
 
 ## Implementation
-**Bulls and Bears** is a stock quote search app that uses _Yahoo Finance's API_ to request stock data for a searched company. Users can launch the app and are greeted with a simple background view and searchbar. They can then enter the name of their desired company to search. The API will then fetch the data for all companies that match the search and display the results in a tableview to choose from. After the user selects the desired company, the retrieved market data will then display in a different tableview. This app is has a navigation controller so user can then simply back out of any view and make a new company search.
+This app has 3 View Controllers
+
+**Search**- When the app is launched the user is presented with a simple background view and search bar. The user then enters the name of a desired company to search. Then they are directed to the Symbol View while the API fetches and parses all the companies(and their data) that match the search.
+
+**Symbol**- The user is then presented with a list of companies that match the search to choose from. Once the user selects a company they are then direted to the Quote View.
+
+**Quote**- The data for selected company is then displayed in a tableview. When the user is finished they can simply back out to the Search view and enter a new company.
+
+
 
 
 
