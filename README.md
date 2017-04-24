@@ -2,6 +2,8 @@
 **iOS Developer Nanodegree Final Project**
 
 
+
+
 **Bulls and Bears** is a stock quote app that uses the _Yahoo Finance API_ to request stock data for a searched company.
 
 
@@ -10,8 +12,16 @@
 
 
 
+
+
+
+
 ## Installation
-Simply run 'pod install' from terminal and open **.xcworkspace** instead of .xcodeproj
+Simply run `pod install` from terminal and open **.xcworkspace** instead of .xcodeproj
+
+
+
+
 
 
 
