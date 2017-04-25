@@ -13,7 +13,7 @@ class Popup {
     class func simpleAlert(title: String, message: String, viewController: UIViewController) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let cancel = UIAlertAction(title: "확인", style: UIAlertActionStyle.cancel) { (alertAction:UIAlertAction) -> Void in
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (alertAction:UIAlertAction) -> Void in
             alertController.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(cancel)
@@ -23,7 +23,7 @@ class Popup {
     class func handlerAlert(title: String, message: String, viewController: UIViewController, completionHandler: @escaping (_ isDone: Bool) -> Void) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let cancel = UIAlertAction(title: "확인", style: UIAlertActionStyle.cancel) { (alertAction:UIAlertAction) -> Void in
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (alertAction:UIAlertAction) -> Void in
             alertController.dismiss(animated: true, completion: nil)
             completionHandler(true)
         }
