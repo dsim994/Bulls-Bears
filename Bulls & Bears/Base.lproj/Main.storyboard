@@ -30,7 +30,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XdJ-yg-3P0" firstAttribute="centerX" secondItem="lCT-Rs-yG9" secondAttribute="centerX" id="F9h-iI-Ova"/>
                             <constraint firstItem="XdJ-yg-3P0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LPN-Tn-lan"/>

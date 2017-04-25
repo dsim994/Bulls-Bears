@@ -22,7 +22,6 @@ class QuoteTableViewController: YahooFinanceViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = self
-        self.navigationItem.title = self.viewModel.getTexts(.title)
         self.setQuoteTableView()
         self.showQuoteTableView()
     }

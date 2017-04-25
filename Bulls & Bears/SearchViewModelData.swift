@@ -11,9 +11,6 @@ import Foundation
 final class SearchViewModelData {
     
     enum Texts: String {
-        case title = "Get A Quote"
-        case placeholder = "Enter company name"
-        
         case failDefaultTitle = "Sorry"
         case failMessage = "Fail to Search Symbol"
         case failDefaultMessage = "Not Found"

@@ -19,11 +19,7 @@ class SymbolTableViewController: YahooFinanceViewController {
     var viewModel: SymbolViewModel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         self.viewModel = self
-        self.navigationItem.title = self.viewModel.getTexts(.title)
-        
         self.setSymbolTableView()
         self.showSymbolTableView()
     }
@@ -42,9 +38,8 @@ class SymbolTableViewController: YahooFinanceViewController {
             cell.nameLabel.text = (element.name ?? "")
             cell.symbolLabel.text = (element.symbol ?? "")
             }.addDisposableTo(disposeBag)
-        }
-    
     }
+}
 
 extension SymbolTableViewController: SymbolViewModel {
     

@@ -39,8 +39,6 @@ extension SymbolViewModel {
     
     func queryQuote(_ symbol:String) {
         self.showLoading()
-        // Actually, You can put multiple symbols to query to each quotes at once.
-        // But in this flow, just only one symbol is adjusted.
         QueryParser.query([symbol]) { (quotes, error) in
             if (quotes != nil) {
                 self.queryQuoteSuccess(quotes: quotes!)

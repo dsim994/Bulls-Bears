@@ -30,10 +30,5 @@ extension QuoteViewModel {
             self.refreshUI()
         }
     }
-    
-    func getTexts(_ key: QuoteViewModelData.Texts) -> String {
-        return key.rawValue
-    }
-    
 }
 

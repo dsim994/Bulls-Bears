@@ -14,7 +14,7 @@ final class QuoteViewModelData {
     var quotes = [Quote]()
     
     enum Texts: String {
-        case title = "Quote"
+        case title = ""
         
     }
 }

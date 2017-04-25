@@ -14,7 +14,7 @@ import RxCocoa
 class SearchViewController: YahooFinanceViewController {
     
     static let identifier = "SearchViewController"
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var viewModel: SearchViewModel!
@@ -22,25 +22,17 @@ class SearchViewController: YahooFinanceViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = self
-        self.navigationItem.title = self.viewModel.getTexts(.title)
         self.setSearchBar()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.searchBar.becomeFirstResponder()
+        self.hideKeyboardWhenTappedAround()
     }
     
     func setSearchBar() {
-        
+
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor.white
         
         self.searchBar.delegate = self
-        self.searchBar.placeholder = self.viewModel.getTexts(.placeholder)
         self.searchBar.rx.searchButtonClicked.bind {
-            
-            self.searchBar.resignFirstResponder()
             Observable.just(self.searchBar.text).filter({
                 ($0 != nil && $0!.trimmingCharacters(in: .whitespaces) != "")
             }).bind(onNext: { (string: String?) in
@@ -85,3 +77,19 @@ extension SearchViewController: UISearchBarDelegate {
         
     }
 }
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+

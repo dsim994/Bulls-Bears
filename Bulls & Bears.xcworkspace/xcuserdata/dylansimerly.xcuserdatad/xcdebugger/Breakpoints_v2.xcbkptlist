@@ -23,14 +23,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "514625662.682136"
+            filePath = "Bulls &amp; Bears/SymbolTableViewController.swift"
+            timestampString = "514786523.607692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "SymbolTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -40,12 +40,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "514626085.368394"
+            timestampString = "514785943.380917"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "SearchViewController"
+            landmarkType = "4">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bulls &amp; Bears/SearchViewController.swift"
+            timestampString = "514785943.380917"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "setSearchBar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
