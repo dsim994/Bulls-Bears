@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1E808B1EB256D30041FB1E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E808A1EB256D30041FB1E /* CoreDataStack.swift */; };
+		BC1E808E1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC1E808C1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld */; };
 		BC7437181EAC340B001B79D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7437171EAC340B001B79D7 /* AppDelegate.swift */; };
 		BC74371A1EAC340B001B79D7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7437191EAC340B001B79D7 /* SearchViewController.swift */; };
 		BC74371D1EAC340B001B79D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC74371B1EAC340B001B79D7 /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		19E0B461F22F93297437AB4C /* Pods_Bulls___Bears.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulls___Bears.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6F3ECB6D225E156314031C /* Pods-Bulls & Bears.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulls & Bears.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears.release.xcconfig"; sourceTree = "<group>"; };
 		AFB151ABFDC1F907DEE0912E /* Pods-Bulls & Bears.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulls & Bears.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears.debug.xcconfig"; sourceTree = "<group>"; };
+		BC1E808A1EB256D30041FB1E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BC1E808D1EB2571F0041FB1E /* Bulls&Bears.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bulls&Bears.xcdatamodel"; sourceTree = "<group>"; };
 		BC7437141EAC340B001B79D7 /* Bulls & Bears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulls & Bears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7437171EAC340B001B79D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC7437191EAC340B001B79D7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				BCE35FFD1EAC7E6A0032EF6A /* SearchViewModelData.swift */,
 				BCE35FFF1EAC7E800032EF6A /* SymbolViewModelData.swift */,
 				BCE360011EAC7E8F0032EF6A /* QuoteViewModelData.swift */,
+				BC1E808A1EB256D30041FB1E /* CoreDataStack.swift */,
+				BC1E808C1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -446,7 +452,9 @@
 				BCE35FEA1EAC7C080032EF6A /* YahooFinanceViewController.swift in Sources */,
 				BCE35FE41EAC79930032EF6A /* Popup.swift in Sources */,
 				BCE35FF21EAC7D850032EF6A /* QuoteTableViewCell.swift in Sources */,
+				BC1E808E1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld in Sources */,
 				BCE35FF01EAC7D770032EF6A /* SymbolTableViewCell.swift in Sources */,
+				BC1E808B1EB256D30041FB1E /* CoreDataStack.swift in Sources */,
 				BCE35FFE1EAC7E6A0032EF6A /* SearchViewModelData.swift in Sources */,
 				BCE35FE81EAC7BF00032EF6A /* QuoteTableViewController.swift in Sources */,
 				BCE35FE11EAC76E90032EF6A /* App Constants.swift in Sources */,
@@ -728,6 +736,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC1E808C1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC1E808D1EB2571F0041FB1E /* Bulls&Bears.xcdatamodel */,
+			);
+			currentVersion = BC1E808D1EB2571F0041FB1E /* Bulls&Bears.xcdatamodel */;
+			path = "Bulls&Bears.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BC74370C1EAC340B001B79D7 /* Project object */;
 }
