@@ -6,111 +6,164 @@
 //  Copyright © 2017 dylansimerly. All rights reserved.
 //
 
+import Foundation
 import CoreData
 
-// MARK: - CoreDataStack
+typealias BatchTask=(_ workerContext: NSManagedObjectContext) -> ()
+
+enum CoreDataManagerNotifications : String {
+    case ImportingTaskDidFinish = "ImportingTaskDidFinish"
+}
 
 struct CoreDataStack {
+    let model : NSManagedObjectModel
+    let coordinator : NSPersistentStoreCoordinator
+    let modelURL : NSURL
+    let dbURL : NSURL
+    let persistingContext : NSManagedObjectContext
+    let backgroundContext : NSManagedObjectContext
+    let context : NSManagedObjectContext
     
-    // MARK: Properties
-    
-    private let model: NSManagedObjectModel
-    internal let coordinator: NSPersistentStoreCoordinator
-    private let modelURL: URL
-    internal let dbURL: URL
-    let context: NSManagedObjectContext
-    
-    // MARK: Initializers
+    static let sharedInstance = CoreDataStack(modelName: "Bulls&Bears")!
     
     init?(modelName: String) {
-        
-        // Assumes the model is in the main bundle
-        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else {
+        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd")else {
             print("Unable to find \(modelName)in the main bundle")
             return nil
         }
-        self.modelURL = modelURL
         
-        // Try to create the model from the URL
+        self.modelURL = modelURL as NSURL
         guard let model = NSManagedObjectModel(contentsOf: modelURL) else {
             print("unable to create a model from \(modelURL)")
             return nil
         }
         self.model = model
         
-        // Create the store coordinator
         coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
+        persistingContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        persistingContext.name = "Persisting"
+        persistingContext.persistentStoreCoordinator = coordinator
         
-        // create a context and add connect it to the coordinator
         context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        context.persistentStoreCoordinator = coordinator
+        context.parent = persistingContext
+        context.name = "Main"
+        backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        backgroundContext.parent = context
+        backgroundContext.name = "Background"
         
-        // Add a SQLite store located in the documents folder
         let fm = FileManager.default
-        
-        guard let docUrl = fm.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            print("Unable to reach the documents folder")
-            return nil
+        guard let  docUrl = fm.urls(for: .documentDirectory, in: .userDomainMask).first
+            else {
+                print("Unable to reach the documents folder")
+                return nil
         }
-        
-        self.dbURL = docUrl.appendingPathComponent("model.sqlite")
-        
-        // Options for migration
-        let options = [NSInferMappingModelAutomaticallyOption: true,NSMigratePersistentStoresAutomaticallyOption: true]
-        
+        self.dbURL = docUrl.appendingPathComponent("VirtualTourist.sqlite") as NSURL
         do {
-            try addStoreCoordinator(NSSQLiteStoreType, configuration: nil, storeURL: dbURL, options: options as [NSObject : AnyObject]?)
+            try addStoreTo(coordinator: coordinator,
+                           storeType: NSSQLiteStoreType,
+                           configuration: nil,
+                           storeURL: dbURL,
+                           options: nil)
         } catch {
             print("unable to add store at \(dbURL)")
         }
     }
     
-    // MARK: Utils
-    
-    func addStoreCoordinator(_ storeType: String, configuration: String?, storeURL: URL, options : [NSObject:AnyObject]?) throws {
-        try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbURL, options: nil)
+    func addStoreTo(coordinator coord : NSPersistentStoreCoordinator,
+                    storeType: String,
+                    configuration: String?,
+                    storeURL: NSURL,
+                    options : [NSObject : AnyObject]?) throws {
+        
+        try coord.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbURL as URL, options: nil)
     }
 }
 
-// MARK: - CoreDataStack (Removing Data)
-
-internal extension CoreDataStack  {
-    
-    func dropAllData() throws {
-        // delete all the objects in the db. This won't delete the files, it will
-        // just leave empty tables.
-        try coordinator.destroyPersistentStore(at: dbURL, ofType:NSSQLiteStoreType , options: nil)
-        try addStoreCoordinator(NSSQLiteStoreType, configuration: nil, storeURL: dbURL, options: nil)
-    }
-}
-
-// MARK: - CoreDataStack (Save Data)
 
 extension CoreDataStack {
-    
-    func saveContext() throws {
-        if context.hasChanges {
-            try context.save()
-        }
+    func dropAllData() throws {
+        try coordinator.destroyPersistentStore(at: dbURL as URL, ofType:NSSQLiteStoreType , options: nil)
+        try addStoreTo(coordinator: self.coordinator, storeType: NSSQLiteStoreType, configuration: nil, storeURL: dbURL, options: nil)
     }
-    
-    func autoSave(_ delayInSeconds : Int) {
-        
-        if delayInSeconds > 0 {
-            do {
-                try saveContext()
-                print("Autosaving")
-            } catch {
-                print("Error while autosaving")
-            }
-            
-            let delayInNanoSeconds = UInt64(delayInSeconds) * NSEC_PER_SEC
-            let time = DispatchTime.now() + Double(Int64(delayInNanoSeconds)) / Double(NSEC_PER_SEC)
-            
-            DispatchQueue.main.asyncAfter(deadline: time) {
-                self.autoSave(delayInSeconds)
-            }
+}
+
+extension CoreDataStack {
+    func performBackgroundBatchOperation(batch: @escaping BatchTask)
+    {
+        backgroundContext.perform()
+            {
+                batch(self.backgroundContext)
+                do
+                {
+                    try self.backgroundContext.save()
+                }
+                catch
+                {
+                    fatalError("Error while saving backgroundContext: \(error)")
+                }
         }
     }
 }
 
+extension CoreDataStack {
+    func performBackgroundImportingBatchOperation(batch: @escaping BatchTask) {
+        
+        let tmpCoord = NSPersistentStoreCoordinator(managedObjectModel: self.model)
+        
+        do {
+            try addStoreTo(coordinator: tmpCoord, storeType: NSSQLiteStoreType, configuration: nil, storeURL: dbURL, options: nil)
+        } catch {
+            fatalError("Error adding a SQLite Store: \(error)")
+        }
+        
+        let moc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        moc.name = "Importer"
+        moc.persistentStoreCoordinator = tmpCoord
+        
+        moc.perform() {
+            batch(moc)
+            
+            do {
+                try moc.save()
+            } catch {
+                fatalError("Error saving importer moc: \(moc)")
+            }
+            let nc = NotificationCenter.default
+            let n = NSNotification(name: NSNotification.Name(rawValue: CoreDataManagerNotifications.ImportingTaskDidFinish.rawValue),
+                                   object: nil)
+            nc.post(n as Notification)
+        }
+    }
+}
+
+extension CoreDataStack {
+    func save() {
+        context.performAndWait() {
+            if self.context.hasChanges {
+                do {
+                    try self.context.save()
+                } catch {
+                    fatalError("Error while saving main context: \(error)")
+                }
+                
+                self.persistingContext.perform() {
+                    do {
+                        try self.persistingContext.save()
+                    } catch {
+                        fatalError("Error while saving persisting context: \(error)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func autoSave(delayInSeconds : Int) {
+        if delayInSeconds > 0 {
+            save()
+            let when = DispatchTime.now() + .seconds(delayInSeconds)
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.autoSave(delayInSeconds: delayInSeconds)
+            }
+        }
+    }
+}
