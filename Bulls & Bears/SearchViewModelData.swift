@@ -13,6 +13,6 @@ final class SearchViewModelData {
     enum Texts: String {
         case failDefaultTitle = "Sorry"
         case failMessage = "Fail to Search Symbol"
-        case failDefaultMessage = "Not Found"
+        case failDefaultMessage = "No Connection, Please Try Again Later"
     }
 }
