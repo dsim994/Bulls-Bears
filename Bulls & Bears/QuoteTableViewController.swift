@@ -18,9 +18,16 @@ class QuoteTableViewController: YahooFinanceViewController {
     @IBOutlet var quoteTableView: UITableView!
     
     var viewModel: QuoteViewModel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "+Watchlist",
+            style: .plain,
+            target: self,
+            action: #selector(addToWatchlistPressed))
+        
         self.viewModel = self
         self.setQuoteTableView()
         self.showQuoteTableView()
@@ -44,6 +51,11 @@ extension QuoteTableViewController: QuoteViewModel {
     
     func refreshUI() {
         self.showQuoteTableView()
+    }
+    
+    func addToWatchlistPressed(sender: UIBarButtonItem){
+        print("Clicked")
+        performSegue(withIdentifier: "+WatchlistPressed", sender: nil)
     }
 }
 
