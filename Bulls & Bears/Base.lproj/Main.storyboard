@@ -44,7 +44,7 @@
                     <navigationItem key="navigationItem" id="iUG-zW-h20">
                         <barButtonItem key="rightBarButtonItem" title="Watchlist" id="wQG-rh-1sI">
                             <connections>
-                                <segue destination="utE-9L-nSv" kind="show" id="587-rz-fku"/>
+                                <segue destination="utE-9L-nSv" kind="show" identifier="showWatchlist" id="587-rz-fku"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,11 +65,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Q5h-kI-fF0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q1h-b4-Ddb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NEu-IV-CAK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchlistSymbolTableViewCell" rowHeight="80" id="4sc-K1-pjg" customClass="WatchlistSymbolTableViewCell" customModule="Bulls___Bears" customModuleProvider="target">
@@ -135,7 +135,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="watchlistTableView" destination="NEu-IV-CAK" id="7ja-UP-rhm"/>
+                        <outlet property="watchlistSymbolTableView" destination="NEu-IV-CAK" id="VZT-bq-Rud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scy-gB-qcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -397,6 +397,6 @@
         <image name="Wall Street" width="1145" height="763"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QjS-2S-X5F"/>
+        <segue reference="587-rz-fku"/>
     </inferredMetricsTieBreakers>
 </document>
