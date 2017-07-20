@@ -21,6 +21,7 @@ class SymbolTableViewController: YahooFinanceViewController {
     var viewModel: SymbolViewModel!
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
 
+    var selectedSymbol : Result?
     
     override func viewDidLoad() {
         self.viewModel = self
@@ -30,8 +31,10 @@ class SymbolTableViewController: YahooFinanceViewController {
     
     func setSymbolTableView() {
         self.symbolTableView.rx.modelSelected(Result.self).subscribe { (event:Event<Result>) in
-            if let symbol = event.element?.symbol {
+            if let symbol = event.element?.symbol /*, let name = event.element?.name*/ {
                 self.viewModel.queryQuote(symbol)
+                self.selectedSymbol = event.element
+                //print( "Selected ", self.selectedSymbol )
             }
             }.addDisposableTo(disposeBag)
             stack.save()
@@ -88,6 +91,7 @@ extension SymbolTableViewController: SymbolViewModel {
     func queryQuoteSuccess(quotes: [Quote]) {
         let quoteTableViewController = self.mainStoryboard.instantiateViewController(withIdentifier: QuoteTableViewController.identifier) as! QuoteTableViewController
         QuoteViewModelData.sharedData.quotes = quotes
+        quoteTableViewController.symbol = selectedSymbol
         self.navigationController?.pushViewController(quoteTableViewController, animated: true)
     }
     

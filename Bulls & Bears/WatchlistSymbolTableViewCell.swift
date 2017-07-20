@@ -12,5 +12,9 @@ class WatchlistSymbolTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "WatchlistSymbolTableViewCell"
     static let expectedHeight: CGFloat = 60.0
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var symbolLabel: UILabel!
+    
 
 }

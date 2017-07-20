@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BC1E808B1EB256D30041FB1E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E808A1EB256D30041FB1E /* CoreDataStack.swift */; };
-		BC1E808E1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC1E808C1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld */; };
 		BC3D42CE1F113BF300900E4A /* WatchlistSymbolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D42CD1F113BF300900E4A /* WatchlistSymbolTableViewController.swift */; };
 		BC7437181EAC340B001B79D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7437171EAC340B001B79D7 /* AppDelegate.swift */; };
 		BC74371A1EAC340B001B79D7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7437191EAC340B001B79D7 /* SearchViewController.swift */; };
@@ -18,6 +17,8 @@
 		BC74372D1EAC340B001B79D7 /* Bulls___BearsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74372C1EAC340B001B79D7 /* Bulls___BearsTests.swift */; };
 		BC7437381EAC340B001B79D7 /* Bulls___BearsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7437371EAC340B001B79D7 /* Bulls___BearsUITests.swift */; };
 		BCD9230E1F1E9EE9000632D8 /* WatchlistQuoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9230D1F1E9EE9000632D8 /* WatchlistQuoteTableViewController.swift */; };
+		BCD923111F202BC6000632D8 /* Bulls&Bears.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD9230F1F202BC6000632D8 /* Bulls&Bears.xcdatamodeld */; };
+		BCD923131F202C29000632D8 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD923121F202C29000632D8 /* Symbol.swift */; };
 		BCE35FE11EAC76E90032EF6A /* App Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE35FE01EAC76E90032EF6A /* App Constants.swift */; };
 		BCE35FE41EAC79930032EF6A /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE35FE31EAC79930032EF6A /* Popup.swift */; };
 		BCE35FE61EAC7BDF0032EF6A /* SymbolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE35FE51EAC7BDF0032EF6A /* SymbolTableViewController.swift */; };
@@ -63,7 +64,6 @@
 		6D6F3ECB6D225E156314031C /* Pods-Bulls & Bears.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulls & Bears.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears.release.xcconfig"; sourceTree = "<group>"; };
 		AFB151ABFDC1F907DEE0912E /* Pods-Bulls & Bears.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulls & Bears.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears.debug.xcconfig"; sourceTree = "<group>"; };
 		BC1E808A1EB256D30041FB1E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		BC1E808D1EB2571F0041FB1E /* Bulls&Bears.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bulls&Bears.xcdatamodel"; sourceTree = "<group>"; };
 		BC3D42CD1F113BF300900E4A /* WatchlistSymbolTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistSymbolTableViewController.swift; sourceTree = "<group>"; };
 		BC7437141EAC340B001B79D7 /* Bulls & Bears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulls & Bears.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7437171EAC340B001B79D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +79,8 @@
 		BC7437371EAC340B001B79D7 /* Bulls___BearsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bulls___BearsUITests.swift"; sourceTree = "<group>"; };
 		BC7437391EAC340B001B79D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD9230D1F1E9EE9000632D8 /* WatchlistQuoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistQuoteTableViewController.swift; sourceTree = "<group>"; };
+		BCD923101F202BC6000632D8 /* Bulls&Bears.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bulls&Bears.xcdatamodel"; sourceTree = "<group>"; };
+		BCD923121F202C29000632D8 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		BCE35FE01EAC76E90032EF6A /* App Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "App Constants.swift"; sourceTree = "<group>"; };
 		BCE35FE31EAC79930032EF6A /* Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		BCE35FE51EAC7BDF0032EF6A /* SymbolTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolTableViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				BC7437191EAC340B001B79D7 /* SearchViewController.swift */,
 				BCE35FE51EAC7BDF0032EF6A /* SymbolTableViewController.swift */,
 				BCE35FE71EAC7BF00032EF6A /* QuoteTableViewController.swift */,
+				BCD923121F202C29000632D8 /* Symbol.swift */,
 				BC3D42CD1F113BF300900E4A /* WatchlistSymbolTableViewController.swift */,
 				BCD9230D1F1E9EE9000632D8 /* WatchlistQuoteTableViewController.swift */,
 			);
@@ -265,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1E808A1EB256D30041FB1E /* CoreDataStack.swift */,
-				BC1E808C1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld */,
+				BCD9230F1F202BC6000632D8 /* Bulls&Bears.xcdatamodeld */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -463,9 +466,11 @@
 				BCE360041EAC7EBF0032EF6A /* SearchParser.swift in Sources */,
 				BCE360061EAC7ED20032EF6A /* QueryParser.swift in Sources */,
 				BCE35FE61EAC7BDF0032EF6A /* SymbolTableViewController.swift in Sources */,
+				BCD923131F202C29000632D8 /* Symbol.swift in Sources */,
 				BCE35FF41EAC7DB30032EF6A /* QuoteViewModel.swift in Sources */,
 				BCE35FF81EAC7DE80032EF6A /* YahooFinanceViewModel.swift in Sources */,
 				BC74371A1EAC340B001B79D7 /* SearchViewController.swift in Sources */,
+				BCD923111F202BC6000632D8 /* Bulls&Bears.xcdatamodeld in Sources */,
 				BCFA52281F194D5300BC51F5 /* WatchlistSymbolTableViewCell.swift in Sources */,
 				BC7437181EAC340B001B79D7 /* AppDelegate.swift in Sources */,
 				BCE35FFA1EAC7DFA0032EF6A /* SearchViewModel.swift in Sources */,
@@ -476,7 +481,6 @@
 				BCE35FF21EAC7D850032EF6A /* QuoteTableViewCell.swift in Sources */,
 				BCD9230E1F1E9EE9000632D8 /* WatchlistQuoteTableViewController.swift in Sources */,
 				BCFA522A1F194D9A00BC51F5 /* WatchlistQuoteTableViewCell.swift in Sources */,
-				BC1E808E1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld in Sources */,
 				BCE35FF01EAC7D770032EF6A /* SymbolTableViewCell.swift in Sources */,
 				BC1E808B1EB256D30041FB1E /* CoreDataStack.swift in Sources */,
 				BCE35FFE1EAC7E6A0032EF6A /* SearchViewModelData.swift in Sources */,
@@ -762,12 +766,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BC1E808C1EB2571F0041FB1E /* Bulls&Bears.xcdatamodeld */ = {
+		BCD9230F1F202BC6000632D8 /* Bulls&Bears.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BC1E808D1EB2571F0041FB1E /* Bulls&Bears.xcdatamodel */,
+				BCD923101F202BC6000632D8 /* Bulls&Bears.xcdatamodel */,
 			);
-			currentVersion = BC1E808D1EB2571F0041FB1E /* Bulls&Bears.xcdatamodel */;
+			currentVersion = BCD923101F202BC6000632D8 /* Bulls&Bears.xcdatamodel */;
 			path = "Bulls&Bears.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
