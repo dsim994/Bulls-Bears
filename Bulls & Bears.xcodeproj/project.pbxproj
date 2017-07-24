@@ -215,7 +215,6 @@
 				BC7437191EAC340B001B79D7 /* SearchViewController.swift */,
 				BCE35FE51EAC7BDF0032EF6A /* SymbolTableViewController.swift */,
 				BCE35FE71EAC7BF00032EF6A /* QuoteTableViewController.swift */,
-				BCD923121F202C29000632D8 /* Symbol.swift */,
 				BC3D42CD1F113BF300900E4A /* WatchlistSymbolTableViewController.swift */,
 				BCD9230D1F1E9EE9000632D8 /* WatchlistQuoteTableViewController.swift */,
 			);
@@ -267,6 +266,7 @@
 		BCFA522B1F194FA800BC51F5 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				BCD923121F202C29000632D8 /* Symbol.swift */,
 				BC1E808A1EB256D30041FB1E /* CoreDataStack.swift */,
 				BCD9230F1F202BC6000632D8 /* Bulls&Bears.xcdatamodeld */,
 			);

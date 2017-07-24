@@ -6,12 +6,8 @@
 //  Copyright © 2017 dylansimerly. All rights reserved.
 //
 
-import Foundation
-
 protocol YahooFinanceViewModel {
-    
 }
 
 extension YahooFinanceViewModel {
-    
 }

@@ -7,8 +7,6 @@
 //
 
 import RxCocoa
-import RxDataSources
-import RxSwift
 
 protocol SearchViewModel {
     

@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 import CoreData
 
 class SymbolTableViewController: YahooFinanceViewController {
@@ -19,7 +18,6 @@ class SymbolTableViewController: YahooFinanceViewController {
     
     let stack = CoreDataStack.sharedInstance
     var viewModel: SymbolViewModel!
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
 
     var selectedSymbol : Result?
     
@@ -37,7 +35,6 @@ class SymbolTableViewController: YahooFinanceViewController {
                 //print( "Selected ", self.selectedSymbol )
             }
             }.addDisposableTo(disposeBag)
-            stack.save()
     }
     
     func showSymbolTableView() {
@@ -46,44 +43,17 @@ class SymbolTableViewController: YahooFinanceViewController {
             cell.nameLabel.text = (element.name ?? "")
             cell.symbolLabel.text = (element.symbol ?? "")
             }.addDisposableTo(disposeBag)
-            stack.save()
     }
 }
-
-extension SymbolTableViewController: NSFetchedResultsControllerDelegate {
-    
-    func fetchQuotes() -> [Quotes] {
-        
-        var quotes = [Quotes]()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Quotes")
-        fetchRequest.sortDescriptors = []
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = self
-        
-        do {
-            try fetchedResultsController.performFetch()
-            if let results = fetchedResultsController.fetchedObjects as? [Quotes] {
-                quotes = results
-            }
-        } catch {
-            print("Error while trying to fetch photos.")
-        }
-        return quotes
-    }
-    
-}
-
 
 extension SymbolTableViewController: SymbolViewModel {
     
     func refreshUI() {
         self.showSymbolTableView()
     }
-    
     func showLoading() {
         self.showLoadingView()
     }
-    
     func hideLoading() {
         self.hideLoadingView()
     }

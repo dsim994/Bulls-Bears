@@ -7,10 +7,6 @@
 //
 
 import Foundation
-import RxCocoa
-import RxDataSources
-import RxSwift
-import ObjectMapper
 
 protocol SymbolViewModel: YahooFinanceViewModel {
     

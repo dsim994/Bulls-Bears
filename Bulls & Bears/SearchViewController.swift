@@ -8,8 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
-
 
 class SearchViewController: YahooFinanceViewController {
     
@@ -47,11 +45,9 @@ extension SearchViewController: SearchViewModel {
     func showLoading() {
         self.showLoadingView()
     }
-    
     func hideLoading() {
         self.hideLoadingView()
     }
-    
     
     func searchSuccess(results: [Result]) {
         
@@ -68,7 +64,6 @@ extension SearchViewController: SearchViewModel {
             self.searchBar.becomeFirstResponder()
         })
     }
-    
 }
 
 extension SearchViewController: UISearchBarDelegate {

@@ -6,8 +6,6 @@
 //  Copyright © 2017 dylansimerly. All rights reserved.
 //
 
-import Foundation
-
 final class SearchViewModelData {
     
     enum Texts: String {

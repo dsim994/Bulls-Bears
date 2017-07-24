@@ -7,11 +7,9 @@
 //
 
 import UIKit
-
 import CoreData
 
 extension Symbol {
-    
     
     static func getSymbol( _ symbol : String!, name: String! ) -> Symbol! {
         
@@ -27,7 +25,6 @@ extension Symbol {
         
         return Symbol( symbol, name: name )
     }
-    
     
     convenience init(_ symbol: String!, name: String! ) {
         
