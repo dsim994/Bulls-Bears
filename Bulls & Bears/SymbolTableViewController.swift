@@ -17,6 +17,7 @@ class SymbolTableViewController: YahooFinanceViewController {
     @IBOutlet var symbolTableView: UITableView!
     
     let stack = CoreDataStack.sharedInstance
+    
     var viewModel: SymbolViewModel!
 
     var selectedSymbol : Result?

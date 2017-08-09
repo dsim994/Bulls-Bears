@@ -56,26 +56,23 @@ extension QuoteTableViewController: QuoteViewModel {
     }
     
     func addToWatchlistPressed(sender: UIBarButtonItem){
-       // print("Clicked symbol", symbol?.name, symbol?.symbol)
         
         if let symbolSymbol = symbol?.symbol, let symbolName = symbol?.name {
             _ = Symbol.getSymbol(symbolSymbol, name: symbolName)
+            
+            CoreDataStack.sharedInstance.save()
         }
-        
-        /*
-        let request = NSFetchRequest<Symbol>(entityName: "Symbol")
-        do {
-            let symbols = try CoreDataStack.sharedInstance.context.fetch(request)
-            symbols.forEach {
-                print("Looping: ", $0.name, $0.symbol)
-            }
-        } catch {
-        }
-        */
-
-        
         
         performSegue(withIdentifier: "+WatchlistPressed", sender: nil)
     }
 }
+
+
+
+
+
+
+
+
+
 

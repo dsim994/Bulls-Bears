@@ -128,6 +128,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="utE-9L-nSv" id="3cp-10-E64"/>
+                                    <outlet property="delegate" destination="utE-9L-nSv" id="iEC-i7-Pzu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
