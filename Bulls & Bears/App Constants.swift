@@ -9,7 +9,6 @@
 import Foundation
 import ObjectMapper
 
-// Error
 struct Error: Mappable  {
     
     init?(map: Map){
@@ -30,7 +29,6 @@ struct Error: Mappable  {
     var code: Int?
 }
 
-// Result
 struct Result: Mappable  {
     
     init?(map: Map){
@@ -55,7 +53,6 @@ struct Result: Mappable  {
     }
 }
 
-// Result Set
 struct ResultSet: Mappable  {
     
     init?(map: Map){
@@ -72,7 +69,6 @@ struct ResultSet: Mappable  {
     var results: [Result]?
 }
 
-// Search Result
 struct SearchResult: Mappable  {
     
     init?(map: Map){
@@ -87,7 +83,6 @@ struct SearchResult: Mappable  {
     var resultSet: ResultSet?
 }
 
-// Quote
 struct Quote: Mappable  {
     
     init?(map: Map){
@@ -264,7 +259,6 @@ struct Quote: Mappable  {
     }
 }
 
-// Quote JSON
 struct QuoteJSON: Mappable {
     
     init?(map: Map){
@@ -281,7 +275,6 @@ struct QuoteJSON: Mappable {
     var error: Error?
 }
 
-// Quote Query
 struct QuoteQuery: Mappable {
     
     var count: Int?
@@ -302,7 +295,6 @@ struct QuoteQuery: Mappable {
     }
 }
 
-// Quote Result
 struct QuoteResult: Mappable {
     
     init?(map: Map){
@@ -318,7 +310,6 @@ struct QuoteResult: Mappable {
     var quotes: [Quote]?
     var quote: Quote? {
         didSet {
-            // In case of the number of quote is 1, and the unity, append the object to 'quotes'
             if (quote != nil) {
                 self.quotes = [Quote]()
                 self.quotes!.append(quote!)

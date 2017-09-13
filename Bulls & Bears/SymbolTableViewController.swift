@@ -30,10 +30,9 @@ class SymbolTableViewController: YahooFinanceViewController {
     
     func setSymbolTableView() {
         self.symbolTableView.rx.modelSelected(Result.self).subscribe { (event:Event<Result>) in
-            if let symbol = event.element?.symbol /*, let name = event.element?.name*/ {
+            if let symbol = event.element?.symbol {
                 self.viewModel.queryQuote(symbol)
                 self.selectedSymbol = event.element
-                //print( "Selected ", self.selectedSymbol )
             }
             }.addDisposableTo(disposeBag)
     }
