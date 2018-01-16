@@ -7,84 +7,122 @@
 //
 
 import UIKit
-import RxSwift
 
-class SearchViewController: YahooFinanceViewController {
+class SearchViewController: UIViewController {
     
-    static let identifier = "SearchViewController"
+/*-------------------------------------------------------------------------------------------------*\
+\*-------------------------------------------#VARIABLES--------------------------------------------*/
+    
+    var viewModel = Singleton.shared
+    var enteredSymbol = ""
+    
+/*-------------------------------------------------------------------------------------------------*\
+\*--------------------------------------------#OUTLETS---------------------------------------------*/
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var viewModel: SearchViewModel!
-    
+/*-------------------------------------------------------------------------------------------------*\
+\*-------------------------------------------#VIEWSETUP--------------------------------------------*/
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = self
-        self.setSearchBar()
-        self.hideKeyboardWhenTappedAround()
-    }
-    
-    func setSearchBar() {
-
-        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = UIColor.white
-        
-        self.searchBar.delegate = self
-        self.searchBar.rx.searchButtonClicked.bind {
-            Observable.just(self.searchBar.text).filter({
-                ($0 != nil && $0!.trimmingCharacters(in: .whitespaces) != "")
-            }).bind(onNext: { (string: String?) in
-                self.viewModel.searchStart(inputString: string!)
-            }).addDisposableTo(self.disposeBag)
-            }.addDisposableTo(self.disposeBag)
-        }
-    }
-
-extension SearchViewController: SearchViewModel {
-    
-    func showLoading() {
-        self.showLoadingView()
-    }
-    func hideLoading() {
-        self.hideLoadingView()
-    }
-    
-    func searchSuccess(results: [Result]) {
-        
-        let symbolTableViewController = self.mainStoryboard.instantiateViewController(withIdentifier: SymbolTableViewController.identifier) as! SymbolTableViewController
-        SymbolViewModelData.sharedData.results = results
-        self.navigationController?.pushViewController(symbolTableViewController, animated: true)
-    }
-    
-    func searchFail(error: NSError?) {
-        let title = self.viewModel.getTexts(.failDefaultTitle)
-        let failMessage = self.viewModel.getTexts(.failMessage)
-        let failDefaultMessage = self.viewModel.getTexts(.failDefaultMessage)
-        self.showPopup(title: (error?.code != nil ? String(error!.code) : title), message: (error != nil ? failMessage : failDefaultMessage), completionHandler: { (complete) in
-            self.searchBar.becomeFirstResponder()
-        })
+        setSearchBar()
     }
 }
+
+/*-------------------------------------------------------------------------------------------------*\
+\*-----------------------------------------#SEARCHBARMETHODS---------------------------------------*/
 
 extension SearchViewController: UISearchBarDelegate {
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    //Set The Delegate, Change Text Color & Enable High KeyBoad
+    func setSearchBar() {
+        searchBar.delegate = self
+        hideKeyboardWhenTappedAround()
         
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = UIColor.white
+    }
+    
+    //Attach User Entered Text To Variable To Build URL
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        enteredSymbol = searchText
+    }
+    
+    //Make The Request From Search Clicked
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        makeQuoteRequest()
     }
 }
 
-extension UIViewController {
+/*-------------------------------------------------------------------------------------------------*\
+\*---------------------------------------#KEYBOARDMETHODS------------------------------------------*/
+
+extension SearchViewController {
     
+    //Method That Hides The Keyboard When Screen Is Touched
     func hideKeyboardWhenTappedAround() {
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))
         
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
+
+/*-------------------------------------------------------------------------------------------------*\
+\*-------------------------------------#NETWORKREQUESTMETHODS--------------------------------------*/
+
+extension SearchViewController {
+    
+    
+    
+    //Network Request Method
+    func makeQuoteRequest() {
+        let stockUrl = "https://api.iextrading.com/1.0/stock/"
+        let quoteRequest = "/quote?displayPercent=true)"
+//        let batchRequest = "/batch"
+        
+        let jsonUrl = "\(stockUrl)\(enteredSymbol)\(quoteRequest)"
+        let url = URL(string: jsonUrl)
+        
+        URLSession.shared.dataTask(with: url!) { (data, resoponse, err) in
+            guard let data = data else { return }
+            do {
+                let fetchedQuotes = try JSONDecoder().decode(Quote.self, from: data)
+                self.viewModel.quotes.append(fetchedQuotes)
+                DispatchQueue.main.async() {
+                    self.performSegue(withIdentifier: "showResults", sender: self)
+                }
+
+            } catch {
+                print("Error Parsing JSON")
+            }
+        }.resume()
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------*\
+\*------------------------------------------#SEGUEMETHODS------------------------------------------*/
+
+extension SearchViewController {
+    
+    //Segue Method Attaches Returned Quotes To Variables
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destVC = segue.destination as? ResultsViewController
+        destVC?.companyNameDisplay = self.viewModel.quotes[0].companyName
+        destVC?.symbolDisplay = self.viewModel.quotes[0].symbol
+        destVC?.latestPriceDisplay = self.viewModel.quotes[0].latestPrice
+        destVC?.changeDisplay = self.viewModel.quotes[0].change
+        destVC?.changePercentDisplay = self.viewModel.quotes[0].changePercent
+    }
+}
+
+
+
+
 

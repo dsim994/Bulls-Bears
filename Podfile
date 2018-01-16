@@ -1,16 +1,10 @@
-# Uncomment the next line to define a global platform for your project
- platform :ios, '9.0'
- use_frameworks!
+platform :ios, '10.0'
+use_frameworks!
 
-# Pods for Bulls & Bears
- def shared_pods
+def shared_pods
      pod 'Alamofire'
-     pod 'RxSwift',    '~> 3.0'
-     pod 'RxCocoa',    '~> 3.0'
-     pod 'ReachabilitySwift', '~> 3'
-     pod 'AlamofireObjectMapper', '~> 4.0'
- end
+end
 
- target 'Bulls & Bears' do
-    shared_pods
- end
+target 'Bulls & Bears' do
+     shared_pods
+end

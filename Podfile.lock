@@ -1,29 +1,12 @@
 PODS:
-  - Alamofire (4.4.0)
-  - AlamofireObjectMapper (4.1.0):
-    - Alamofire (~> 4.1)
-    - ObjectMapper (~> 2.0)
-  - ObjectMapper (2.2.6)
-  - ReachabilitySwift (3)
-  - RxCocoa (3.4.0):
-    - RxSwift (~> 3.4)
-  - RxSwift (3.4.0)
+  - Alamofire (4.6.0)
 
 DEPENDENCIES:
   - Alamofire
-  - AlamofireObjectMapper (~> 4.0)
-  - ReachabilitySwift (~> 3)
-  - RxCocoa (~> 3.0)
-  - RxSwift (~> 3.0)
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
-  ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
-  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
 
-PODFILE CHECKSUM: 015828313ed315d7a3eaaeebdfa4774d4f6455f1
+PODFILE CHECKSUM: 01f46ae672e420736ae8cf496c5450809cc64e0a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
