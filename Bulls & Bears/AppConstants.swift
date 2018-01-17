@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Batch {
-    let quotes = [Quote]()
-    let news = [News]()
-    let chart = [Chart]()
+struct Batch: Decodable {
+    let quote: Quote
+    let news: [News]
+    let chart: [Chart]
 }
 
-struct Quote: Decodable {
+struct Quote : Decodable {
     let symbol: String
     let companyName: String
     let latestPrice: Double
@@ -39,24 +39,19 @@ struct News: Decodable {
     let summary: String
     let related: String
 }
-    
-struct Chart {
-    let minute: String
-    let average: Double
-    let notional: Double
-    let numberOfTrades: Double
-    let high: Double
-    let low: Double
-    let volume: Double
-    let label: Double
-    let changeOverTime: Double
+
+struct Chart: Decodable {
     let date: String
     let open: Double
+    let high: Double
+    let low: Double
     let close: Double
+    let volume: Double
     let unadjustedVolume: Double
     let change: Double
     let changePercent: Double
     let vwap: Double
+    let label: String
+    let changeOverTime: Double
 }
-
 

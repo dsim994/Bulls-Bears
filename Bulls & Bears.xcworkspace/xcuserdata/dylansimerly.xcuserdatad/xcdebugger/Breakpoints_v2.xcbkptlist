@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.035453"
+            timestampString = "537855986.608373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "makeQuoteRequest()"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.035769"
+            timestampString = "537855986.608917"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "makeRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bulls &amp; Bears/SearchViewController.swift"
+            timestampString = "537855986.609046"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "makeRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bulls &amp; Bears/SearchViewController.swift"
+            timestampString = "537855986.609153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "makeQuoteRequest()"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,75 +74,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.035834"
+            timestampString = "537855986.609268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "makeQuoteRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.035887"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "makeQuoteRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.035938"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "makeQuoteRequest()"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Bulls___Bears.SearchViewController.makeQuoteRequest() -&gt; ()"
+                  symbolName = "Bulls___Bears.SearchViewController.makeRequest() -&gt; ()"
                   moduleName = "Bulls &amp; Bears"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/SearchViewController.swift"
-                  timestampString = "537808715.252228"
+                  timestampString = "537855782.833914"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
                   offsetFromSymbolStart = "911">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.SearchViewController.makeQuoteRequest() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.SearchViewController.makeRequest() -&gt; ()"
                   moduleName = "Bulls &amp; Bears"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/SearchViewController.swift"
-                  timestampString = "537808715.254433"
+                  timestampString = "537855782.837822"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "50">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.035987"
+            timestampString = "537855986.609403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "makeQuoteRequest()"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,28 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.036036"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "makeQuoteRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.036083"
+            timestampString = "537855986.609539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "makeQuoteRequest()"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,60 +154,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.036131"
+            timestampString = "537855986.609633"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "makeQuoteRequest()"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.SearchViewController.makeQuoteRequest() -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/SearchViewController.swift"
-                  timestampString = "537808715.275965"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "1286">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.SearchViewController.makeQuoteRequest() -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/SearchViewController.swift"
-                  timestampString = "537808715.278021"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "1716">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.SearchViewController.makeQuoteRequest() -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/SearchViewController.swift"
-                  timestampString = "537808715.280344"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "1747">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -233,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/SearchViewController.swift"
-            timestampString = "537811257.0361789"
+            timestampString = "537855986.609722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "makeQuoteRequest()"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

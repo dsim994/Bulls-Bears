@@ -12,12 +12,12 @@ final class Singleton {
     private init() { }
     
     // MARK: Shared Instance
-    
     static let shared = Singleton()
     
     // MARK: Local Variable
-    
-    var quotes = [Quote]()
+    var quoteArray = [Quote]()
+    var newsArray = [[News]]()
+    var chartArray = [[Chart]]()
     
 }
 

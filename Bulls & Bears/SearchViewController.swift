@@ -51,7 +51,7 @@ extension SearchViewController: UISearchBarDelegate {
     
     //Make The Request From Search Clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        makeQuoteRequest()
+        makeRequest()
     }
 }
 
@@ -78,26 +78,30 @@ extension SearchViewController {
 
 extension SearchViewController {
     
-    
-    
     //Network Request Method
-    func makeQuoteRequest() {
+    func makeRequest() {
         let stockUrl = "https://api.iextrading.com/1.0/stock/"
-        let quoteRequest = "/quote?displayPercent=true)"
-//        let batchRequest = "/batch"
+        let batchRequest = "/batch?types=quote,news,chart"
         
-        let jsonUrl = "\(stockUrl)\(enteredSymbol)\(quoteRequest)"
+        let jsonUrl = "\(stockUrl)\(enteredSymbol)\(batchRequest)"
         let url = URL(string: jsonUrl)
         
         URLSession.shared.dataTask(with: url!) { (data, resoponse, err) in
             guard let data = data else { return }
             do {
-                let fetchedQuotes = try JSONDecoder().decode(Quote.self, from: data)
-                self.viewModel.quotes.append(fetchedQuotes)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let fetchedBatch = try decoder.decode(Batch.self, from: data)
+                self.viewModel.quoteArray.append(fetchedBatch.quote)
+                self.viewModel.newsArray.append(fetchedBatch.news)
+                self.viewModel.chartArray.append(fetchedBatch.chart)
+//                print(self.viewModel.quoteArray)
+//                print(self.viewModel.newsArray)
+//                print(self.viewModel.chartArray)
+                
                 DispatchQueue.main.async() {
                     self.performSegue(withIdentifier: "showResults", sender: self)
                 }
-
             } catch {
                 print("Error Parsing JSON")
             }
@@ -109,16 +113,16 @@ extension SearchViewController {
 \*------------------------------------------#SEGUEMETHODS------------------------------------------*/
 
 extension SearchViewController {
-    
+
     //Segue Method Attaches Returned Quotes To Variables
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         let destVC = segue.destination as? ResultsViewController
-        destVC?.companyNameDisplay = self.viewModel.quotes[0].companyName
-        destVC?.symbolDisplay = self.viewModel.quotes[0].symbol
-        destVC?.latestPriceDisplay = self.viewModel.quotes[0].latestPrice
-        destVC?.changeDisplay = self.viewModel.quotes[0].change
-        destVC?.changePercentDisplay = self.viewModel.quotes[0].changePercent
+        destVC?.companyNameDisplay = self.viewModel.quoteArray[0].companyName
+        destVC?.symbolDisplay = self.viewModel.quoteArray[0].symbol
+        destVC?.latestPriceDisplay = self.viewModel.quoteArray[0].latestPrice
+        destVC?.changeDisplay = self.viewModel.quoteArray[0].change
+        destVC?.changePercentDisplay = self.viewModel.quoteArray[0].changePercent
     }
 }
 

@@ -19,7 +19,11 @@ class ResultsViewController: UIViewController {
     var latestPriceDisplay = Double()
     var changeDisplay = Double()
     var changePercentDisplay = Double()
-    var tableTitles = ["Previous Close", "Open", "Close", "Week 52 Low", "Week 52 High", "Volume", "Average Volume", "Market Cap", "PE Ratio"]
+    var tableTitles = [
+        "Previous Close", "Open", "Close",
+        "Week 52 Low", "Week 52 High", "Volume",
+        "Average Volume", "Market Cap", "PE Ratio"
+    ]
     
 
 /*-------------------------------------------------------------------------------------------------*\
@@ -63,7 +67,6 @@ extension ResultsViewController {
             percentIndicator = "+"
             changeLabel.textColor = UIColor.green
         } else {
-            percentIndicator = "-"
             changeLabel.textColor = UIColor.red
         }
         
@@ -71,7 +74,6 @@ extension ResultsViewController {
             percentIndicator = "+"
             changePercentLabel.textColor = UIColor.green
         } else {
-            percentIndicator = "-"
             changePercentLabel.textColor = UIColor.red
         }
         
@@ -96,27 +98,27 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         let header = ("Key Data")
         return header
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableTitles.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        
-        let roundedPreviousClose = String(format: "%.2f", self.viewModel.quotes[0].previousClose)
-        let roundedOpen = String(format: "%.2f", self.viewModel.quotes[0].open)
-        let roundedClose = String(format: "%.2f", self.viewModel.quotes[0].close)
-        let roundedHigh = String(format: "%.2f", self.viewModel.quotes[0].week52High)
-        let roundedLow = String(format: "%.2f", self.viewModel.quotes[0].week52Low)
-        let roundedVolume = String(format: "%.2fM", self.viewModel.quotes[0].latestVolume/1e6)
-        let roundedAvgVolume = String(format: "%.2fM", self.viewModel.quotes[0].avgTotalVolume/1e6)
-        let roundedMarketCap = String(format: "%.2fB", self.viewModel.quotes[0].marketCap/1e9)
-        let roundedPERatio = String(format: "%.2f", self.viewModel.quotes[0].peRatio)
+
+        let roundedPreviousClose = String(format: "%.2f", self.viewModel.quoteArray[0].previousClose)
+        let roundedOpen = String(format: "%.2f", self.viewModel.quoteArray[0].open)
+        let roundedClose = String(format: "%.2f", self.viewModel.quoteArray[0].close)
+        let roundedHigh = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
+        let roundedLow = String(format: "%.2f", self.viewModel.quoteArray[0].week52Low)
+        let roundedVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].latestVolume/1e6)
+        let roundedAvgVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].avgTotalVolume/1e6)
+        let roundedMarketCap = String(format: "%.2fB", self.viewModel.quoteArray[0].marketCap/1e9)
+        let roundedPERatio = String(format: "%.2f", self.viewModel.quoteArray[0].peRatio)
 
         let tableData = [roundedPreviousClose, roundedOpen, roundedClose, roundedHigh, roundedLow, roundedVolume, roundedAvgVolume, roundedMarketCap, roundedPERatio]
-        
+
         cell.keyLabel.text = self.tableTitles[indexPath.row]
         cell.valueLabel.text = tableData[indexPath.row]
         return cell
