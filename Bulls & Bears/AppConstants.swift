@@ -14,6 +14,7 @@ struct Batch: Decodable {
     let chart: [Chart]
 }
 
+
 struct Quote : Decodable {
     let symbol: String
     let companyName: String
@@ -22,6 +23,10 @@ struct Quote : Decodable {
     let changePercent: Double
     let previousClose: Double
     let open: Double
+    let iexBidPrice: Double
+    let iexAskPrice: Double
+    let high: Double
+    let low: Double
     let close: Double
     let week52Low: Double
     let week52High: Double
@@ -55,3 +60,9 @@ struct Chart: Decodable {
     let changeOverTime: Double
 }
 
+struct Stats: Decodable {
+    let beta: Double
+    let dividendRate: Double
+    let dividendYield: Double
+    let priceToBook: Double
+}

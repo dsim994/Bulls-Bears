@@ -18,6 +18,7 @@ final class Singleton {
     var quoteArray = [Quote]()
     var newsArray = [[News]]()
     var chartArray = [[Chart]]()
+    var statsArray = [Stats]()
     
 }
 

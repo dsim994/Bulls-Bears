@@ -26,6 +26,8 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         setSearchBar()
     }
 }
@@ -51,7 +53,8 @@ extension SearchViewController: UISearchBarDelegate {
     
     //Make The Request From Search Clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        makeRequest()
+        makeBatchRequest()
+  
     }
 }
 
@@ -78,12 +81,14 @@ extension SearchViewController {
 
 extension SearchViewController {
     
+
+    
     //Network Request Method
-    func makeRequest() {
-        let stockUrl = "https://api.iextrading.com/1.0/stock/"
-        let batchRequest = "/batch?types=quote,news,chart"
+    func makeBatchRequest() {
+        let defaultUrl = "https://api.iextrading.com/1.0/stock/"
+        let batchRequest = "/batch?types=quote,news,chart&range=3m&last=10"
         
-        let jsonUrl = "\(stockUrl)\(enteredSymbol)\(batchRequest)"
+        let jsonUrl = "\(defaultUrl)\(enteredSymbol)\(batchRequest)"
         let url = URL(string: jsonUrl)
         
         URLSession.shared.dataTask(with: url!) { (data, resoponse, err) in
@@ -107,6 +112,25 @@ extension SearchViewController {
             }
         }.resume()
     }
+
+//    func makeStatsRequest() {
+//        let defaultUrl = "https://api.iextrading.com/1.0/stock/"
+//        let statsRequest = "/stats"
+//        let jsonUrl = ("\(defaultUrl)\(enteredSymbol)\(statsRequest)")
+//        let url = URL(string: jsonUrl)
+//
+//        URLSession.shared.dataTask(with: url!) { (data, response, err) in
+//            guard let data = data else { return }
+//            do {
+//                let fetchedStats = try JSONDecoder().decode(Stats.self, from: data)
+//                self.viewModel.statsArray.append(fetchedStats)
+//                print(self.viewModel.statsArray)
+//
+//            }catch {
+//                print("Error")
+//            }
+//        }.resume()
+//    }
 }
 
 /*-------------------------------------------------------------------------------------------------*\

@@ -20,8 +20,8 @@ class ResultsViewController: UIViewController {
     var changeDisplay = Double()
     var changePercentDisplay = Double()
     var tableTitles = [
-        "Previous Close", "Open", "Close",
-        "Week 52 Low", "Week 52 High", "Volume",
+        "Previous Close", "Open", "Bid", "Ask", "Day's Range",
+        "52 Week Range", "Volume",
         "Average Volume", "Market Cap", "PE Ratio"
     ]
     
@@ -45,6 +45,7 @@ class ResultsViewController: UIViewController {
         self.navigationItem.title = "\(companyNameDisplay)"
         symbolLabel.text! = "(\(symbolDisplay))"
         convertQuotes()
+//        makeStatsRequest()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -52,6 +53,24 @@ class ResultsViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+//
+//    func makeStatsRequest() {
+//        let defaultUrl = "https://api.iextrading.com/1.0/stock/"
+//        let statsRequest = "/stats"
+//        let jsonUrl = ("\(defaultUrl)\(symbolDisplay)\(statsRequest)")
+//        let url = URL(string: jsonUrl)
+//
+//        URLSession.shared.dataTask(with: url!) { (data, response, err) in
+//            guard let data = data else { return }
+//            do {
+//                let fetchedStats = try JSONDecoder().decode(Stats.self, from: data)
+//                self.viewModel.statsArray.append(fetchedStats)
+//                print(self.viewModel.statsArray)
+//            }catch {
+//                print("Error")
+//            }
+//            }.resume()
+//    }
 }
 
 /*-------------------------------------------------------------------------------------------------*\
@@ -109,15 +128,24 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
         let roundedPreviousClose = String(format: "%.2f", self.viewModel.quoteArray[0].previousClose)
         let roundedOpen = String(format: "%.2f", self.viewModel.quoteArray[0].open)
-        let roundedClose = String(format: "%.2f", self.viewModel.quoteArray[0].close)
-        let roundedHigh = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
-        let roundedLow = String(format: "%.2f", self.viewModel.quoteArray[0].week52Low)
+        let roundedBid = String(format: "%.2f", self.viewModel.quoteArray[0].iexBidPrice)
+        let roundedAsk = String(format: "%.2f", self.viewModel.quoteArray[0].iexAskPrice)
+        let roundedHigh = String(format: "%.2f", self.viewModel.quoteArray[0].high)
+        let roundedLow = String(format: "%.2f", self.viewModel.quoteArray[0].low)
+        let roundedDayRange = ("\(roundedLow) - \(roundedHigh)")
+        
+//        let roundedClose = String(format: "%.2f", self.viewModel.quoteArray[0].close)
+        let rounded52WeekHigh = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
+        let rounded52WeekLow = String(format: "%.2f", self.viewModel.quoteArray[0].week52Low)
+        let rounded52WeekRange = ("\(rounded52WeekLow) - \(rounded52WeekHigh)")
+        
         let roundedVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].latestVolume/1e6)
         let roundedAvgVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].avgTotalVolume/1e6)
+//        let roundedBeta = String(format: "%.2f", self.viewModel.statsArray[0].beta)
         let roundedMarketCap = String(format: "%.2fB", self.viewModel.quoteArray[0].marketCap/1e9)
         let roundedPERatio = String(format: "%.2f", self.viewModel.quoteArray[0].peRatio)
 
-        let tableData = [roundedPreviousClose, roundedOpen, roundedClose, roundedHigh, roundedLow, roundedVolume, roundedAvgVolume, roundedMarketCap, roundedPERatio]
+        let tableData = [roundedPreviousClose, roundedOpen, roundedBid, roundedAsk, roundedDayRange, rounded52WeekRange, roundedVolume, roundedAvgVolume, roundedMarketCap, roundedPERatio]
 
         cell.keyLabel.text = self.tableTitles[indexPath.row]
         cell.valueLabel.text = tableData[indexPath.row]
