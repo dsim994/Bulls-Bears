@@ -16,9 +16,9 @@ final class Singleton {
     
     // MARK: Local Variable
     var quoteArray = [Quote]()
-    var newsArray = [[News]]()
-    var chartArray = [[Chart]]()
-    var statsArray = [Stats]()
+    var quoteNewsArray = [[News]]()
+    var quoteChartArray = [[Chart]]()
+//    var StatsArray = [Stats]()
     
 }
 

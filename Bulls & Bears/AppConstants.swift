@@ -60,9 +60,10 @@ struct Chart: Decodable {
     let changeOverTime: Double
 }
 
-struct Stats: Decodable {
-    let beta: Double
-    let dividendRate: Double
-    let dividendYield: Double
-    let priceToBook: Double
-}
+//struct Stats: Decodable {
+//    let beta: Double
+//    let dividendRate: Double
+//    let dividendYield: Double
+//    let priceToBook: Double
+//}
+
