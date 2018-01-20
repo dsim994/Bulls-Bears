@@ -31,5 +31,5 @@ This app has 4 View Controller Scenes:
 Run `pod install` from terminal and open __.xcworkspace__ instead of .xcodeproj
 
 ### Requirements
-* Xcode 8.0
-* Swift 3.0
+* Xcode 9.0
+* Swift 4.0
