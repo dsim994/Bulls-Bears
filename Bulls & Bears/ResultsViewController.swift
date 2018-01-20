@@ -24,7 +24,7 @@ class ResultsViewController: UIViewController {
         "52 Week Range", "Volume",
         "Average Volume", "Market Cap", "PE Ratio"
     ]
-    
+    var collectionViewData = [News]()
 
 /*-------------------------------------------------------------------------------------------------*\
 \*---------------------------------------------#OUTLETS--------------------------------------------*/
@@ -36,7 +36,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var changePercentLabel: UILabel!
     
-/*-------------------------------------------------------------------------------------------------*\
+    @IBOutlet weak var collectionView: UICollectionView!
+    /*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------------#VIEWSETUP-------------------------------------------*/
 
     override func viewDidLoad() {
@@ -45,9 +46,14 @@ class ResultsViewController: UIViewController {
         self.navigationItem.title = "\(companyNameDisplay)"
         symbolLabel.text! = "(\(symbolDisplay))"
         convertQuotes()
-//        makeStatsRequest()
+        //        makeStatsRequest()
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        self.collectionViewData = self.viewModel.quoteNewsArray[0]
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 20
         
         DispatchQueue.main.async{
             self.tableView.reloadData()
@@ -153,6 +159,20 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(self.collectionViewData.count)
+        return self.collectionViewData.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "symbolNewsCell", for: indexPath) as! SymbolNewsCollectionViewCell
+        print(collectionViewData)
+        cell.headlineLabel.text = self.collectionViewData[indexPath.row].headline
+        //        cell.summaryLabel.text = self.collectionViewData[indexPath.row].summary
+        cell.dateLabel.text = self.collectionViewData[indexPath.row].datetime
+        return cell
+    }
+}
 
 
 

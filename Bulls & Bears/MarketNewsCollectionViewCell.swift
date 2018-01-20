@@ -18,4 +18,11 @@ class MarketNewsCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         summaryLabel.textAlignment = NSTextAlignment.left
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.contentView.autoresizingMask.insert(.flexibleHeight)
+        self.contentView.autoresizingMask.insert(.flexibleWidth)
+    }
 }
