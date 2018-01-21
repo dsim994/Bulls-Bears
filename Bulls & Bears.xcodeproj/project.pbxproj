@@ -16,6 +16,8 @@
 		BC7437221EAC340B001B79D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7437201EAC340B001B79D7 /* LaunchScreen.storyboard */; };
 		BC74372D1EAC340B001B79D7 /* Bulls___BearsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74372C1EAC340B001B79D7 /* Bulls___BearsTests.swift */; };
 		BC7437381EAC340B001B79D7 /* Bulls___BearsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7437371EAC340B001B79D7 /* Bulls___BearsUITests.swift */; };
+		BC85BD3920144BD100B04E17 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85BD3820144BD100B04E17 /* StatsViewController.swift */; };
+		BC85BD3D20144D9600B04E17 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */; };
 		BCD57483200887A50072E5E6 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD57482200887A50072E5E6 /* ResultsViewController.swift */; };
 		BCD5748D200A0FEE0072E5E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5748C200A0FEE0072E5E6 /* TableViewCell.swift */; };
 		BCD5748F200A1F9E0072E5E6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5748E200A1F9E0072E5E6 /* AppConstants.swift */; };
@@ -60,6 +62,8 @@
 		BC7437331EAC340B001B79D7 /* Bulls & BearsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bulls & BearsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7437371EAC340B001B79D7 /* Bulls___BearsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bulls___BearsUITests.swift"; sourceTree = "<group>"; };
 		BC7437391EAC340B001B79D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC85BD3820144BD100B04E17 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		BCD57482200887A50072E5E6 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		BCD5748C200A0FEE0072E5E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BCD5748E200A1F9E0072E5E6 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD5748C200A0FEE0072E5E6 /* TableViewCell.swift */,
+				BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */,
 				BC367B7D201110EE001D133A /* MarketNewsCollectionViewCell.swift */,
 				BC2D9CFD2012BB2800FB6DBE /* SymbolNewsCollectionViewCell.swift */,
 			);
@@ -183,6 +188,7 @@
 			children = (
 				BC7437191EAC340B001B79D7 /* SearchViewController.swift */,
 				BCD57482200887A50072E5E6 /* ResultsViewController.swift */,
+				BC85BD3820144BD100B04E17 /* StatsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -393,12 +399,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC367B7E201110EE001D133A /* MarketNewsCollectionViewCell.swift in Sources */,
+				BC85BD3D20144D9600B04E17 /* StatsTableViewCell.swift in Sources */,
 				BC74371A1EAC340B001B79D7 /* SearchViewController.swift in Sources */,
 				BC7437181EAC340B001B79D7 /* AppDelegate.swift in Sources */,
 				BC2D9CFE2012BB2800FB6DBE /* SymbolNewsCollectionViewCell.swift in Sources */,
 				BCE35FFC1EAC7E220032EF6A /* Singleton.swift in Sources */,
 				BCD5748D200A0FEE0072E5E6 /* TableViewCell.swift in Sources */,
 				BCD5748F200A1F9E0072E5E6 /* AppConstants.swift in Sources */,
+				BC85BD3920144BD100B04E17 /* StatsViewController.swift in Sources */,
 				BCD57483200887A50072E5E6 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,7 @@ class ResultsViewController: UIViewController {
     var changeDisplay = Double()
     var changePercentDisplay = Double()
     var tableTitles = [
-        "Previous Close", "Open", "Bid", "Ask", "Day's Range",
+        "Previous Close", "Open", "Day's Range",
         "52 Week Range", "Volume",
         "Average Volume", "Market Cap", "PE Ratio"
     ]
@@ -36,6 +36,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var changePercentLabel: UILabel!
     
+    @IBOutlet weak var showStatsButton: UIButton!
+    @IBOutlet weak var showNewsButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     /*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------------#VIEWSETUP-------------------------------------------*/
@@ -46,7 +48,6 @@ class ResultsViewController: UIViewController {
         self.navigationItem.title = "\(companyNameDisplay)"
         symbolLabel.text! = "(\(symbolDisplay))"
         convertQuotes()
-        //        makeStatsRequest()
         tableView.delegate = self
         tableView.dataSource = self
         collectionView.delegate = self
@@ -59,24 +60,35 @@ class ResultsViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-//
-//    func makeStatsRequest() {
-//        let defaultUrl = "https://api.iextrading.com/1.0/stock/"
-//        let statsRequest = "/stats"
-//        let jsonUrl = ("\(defaultUrl)\(symbolDisplay)\(statsRequest)")
-//        let url = URL(string: jsonUrl)
-//
-//        URLSession.shared.dataTask(with: url!) { (data, response, err) in
-//            guard let data = data else { return }
-//            do {
-//                let fetchedStats = try JSONDecoder().decode(Stats.self, from: data)
-//                self.viewModel.statsArray.append(fetchedStats)
-//                print(self.viewModel.statsArray)
-//            }catch {
-//                print("Error")
-//            }
-//            }.resume()
-//    }
+    
+    @IBAction func showStatsPressed(_ sender: Any) {
+        let defaultUrl = "https://api.iextrading.com/1.0/stock/"
+        let statsRequest = "/stats"
+        let jsonUrl = ("\(defaultUrl)\(symbolDisplay)\(statsRequest)")
+        let url = URL(string: jsonUrl)
+        
+        URLSession.shared.dataTask(with: url!) { (data, response, err) in
+            guard let data = data else { return }
+            do {
+                print(data)
+                let fetchedStats = try JSONDecoder().decode(Stats.self, from: data)
+                print(fetchedStats)
+                self.viewModel.statsArray.append(fetchedStats)
+                print(self.viewModel.statsArray)
+                
+                DispatchQueue.main.async() {
+                    self.performSegue(withIdentifier: "showStats", sender: self)
+                }
+            }catch {
+                print("Error")
+            }
+            }.resume()
+        }
+    
+    
+    @IBAction func showNewsPressed(_ sender: Any) {
+
+    }
 }
 
 /*-------------------------------------------------------------------------------------------------*\
@@ -119,10 +131,6 @@ extension ResultsViewController {
 \*------------------------------------------#TABLEVIEWMETHODS--------------------------------------*/
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let header = ("Key Data")
-        return header
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableTitles.count
@@ -134,24 +142,26 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
         let roundedPreviousClose = String(format: "%.2f", self.viewModel.quoteArray[0].previousClose)
         let roundedOpen = String(format: "%.2f", self.viewModel.quoteArray[0].open)
-        let roundedBid = String(format: "%.2f", self.viewModel.quoteArray[0].iexBidPrice)
-        let roundedAsk = String(format: "%.2f", self.viewModel.quoteArray[0].iexAskPrice)
+        
+//        guard let roundedBid = String(format: "%.2f", (self.viewModel.quoteArray[0].iexBidPrice)!) else { return }
+      
+      
+//        guard let roundedAsk = String(format: "%.2f", self.viewModel.quoteArray[0].iexAskPrice!) else { return }
+       
         let roundedHigh = String(format: "%.2f", self.viewModel.quoteArray[0].high)
         let roundedLow = String(format: "%.2f", self.viewModel.quoteArray[0].low)
         let roundedDayRange = ("\(roundedLow) - \(roundedHigh)")
         
-//        let roundedClose = String(format: "%.2f", self.viewModel.quoteArray[0].close)
         let rounded52WeekHigh = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
         let rounded52WeekLow = String(format: "%.2f", self.viewModel.quoteArray[0].week52Low)
         let rounded52WeekRange = ("\(rounded52WeekLow) - \(rounded52WeekHigh)")
         
         let roundedVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].latestVolume/1e6)
         let roundedAvgVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].avgTotalVolume/1e6)
-//        let roundedBeta = String(format: "%.2f", self.viewModel.statsArray[0].beta)
         let roundedMarketCap = String(format: "%.2fB", self.viewModel.quoteArray[0].marketCap/1e9)
         let roundedPERatio = String(format: "%.2f", self.viewModel.quoteArray[0].peRatio)
 
-        let tableData = [roundedPreviousClose, roundedOpen, roundedBid, roundedAsk, roundedDayRange, rounded52WeekRange, roundedVolume, roundedAvgVolume, roundedMarketCap, roundedPERatio]
+        let tableData = [roundedPreviousClose, roundedOpen, roundedDayRange, rounded52WeekRange, roundedVolume, roundedAvgVolume, roundedMarketCap, roundedPERatio]
 
         cell.keyLabel.text = self.tableTitles[indexPath.row]
         cell.valueLabel.text = tableData[indexPath.row]
@@ -160,15 +170,15 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.collectionViewData.count)
+//        print(self.collectionViewData.count)
         return self.collectionViewData.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "symbolNewsCell", for: indexPath) as! SymbolNewsCollectionViewCell
-        print(collectionViewData)
+//        print(collectionViewData)
         cell.headlineLabel.text = self.collectionViewData[indexPath.row].headline
-        //        cell.summaryLabel.text = self.collectionViewData[indexPath.row].summary
         cell.dateLabel.text = self.collectionViewData[indexPath.row].datetime
         return cell
     }

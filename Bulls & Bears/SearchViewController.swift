@@ -59,7 +59,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        makeBatchRequest()
+       makeBatchRequest()
   
     }
 }
@@ -104,24 +104,25 @@ extension SearchViewController {
             }
         }.resume()
     }
-    
+
     func makeBatchRequest() {
         let defaultUrl = "https://api.iextrading.com/1.0/stock/"
-        let batchRequest = "/batch?types=quote,news,chart&range=3m&last=10"
-        
+        let batchRequest = "/batch?types=quote,news,chart&range=3m&last=5"
+
         let jsonUrl = "\(defaultUrl)\(enteredSymbol)\(batchRequest)"
         let url = URL(string: jsonUrl)
-        
+
         URLSession.shared.dataTask(with: url!) { (data, resoponse, err) in
             guard let data = data else { return }
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
                 let fetchedBatch = try decoder.decode(Batch.self, from: data)
+//                print(fetchedBatch)
                 self.viewModel.quoteArray.append(fetchedBatch.quote)
                 self.viewModel.quoteNewsArray.append(fetchedBatch.news)
                 self.viewModel.quoteChartArray.append(fetchedBatch.chart)
-                
+
                 DispatchQueue.main.async() {
                     self.performSegue(withIdentifier: "showResults", sender: self)
                 }
@@ -130,25 +131,6 @@ extension SearchViewController {
             }
         }.resume()
     }
-
-//    func makeStatsRequest() {
-//        let defaultUrl = "https://api.iextrading.com/1.0/stock/"
-//        let statsRequest = "/stats"
-//        let jsonUrl = ("\(defaultUrl)\(enteredSymbol)\(statsRequest)")
-//        let url = URL(string: jsonUrl)
-//
-//        URLSession.shared.dataTask(with: url!) { (data, response, err) in
-//            guard let data = data else { return }
-//            do {
-//                let fetchedStats = try JSONDecoder().decode(Stats.self, from: data)
-//                self.viewModel.statsArray.append(fetchedStats)
-//                print(self.viewModel.statsArray)
-//
-//            }catch {
-//                print("Error")
-//            }
-//        }.resume()
-//    }
 }
 
 /*-------------------------------------------------------------------------------------------------*\
@@ -193,8 +175,6 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
     }
-    
-    
 }
 
 

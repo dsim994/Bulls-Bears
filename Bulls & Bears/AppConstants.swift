@@ -23,8 +23,8 @@ struct Quote : Decodable {
     let changePercent: Double
     let previousClose: Double
     let open: Double
-    let iexBidPrice: Double
-    let iexAskPrice: Double
+    let iexBidPrice: Double?
+    let iexAskPrice: Double?
     let high: Double
     let low: Double
     let close: Double
@@ -60,10 +60,49 @@ struct Chart: Decodable {
     let changeOverTime: Double
 }
 
-//struct Stats: Decodable {
-//    let beta: Double
-//    let dividendRate: Double
-//    let dividendYield: Double
-//    let priceToBook: Double
-//}
+struct Stats: Decodable {
+    
+    let companyName: String
+    let beta: Double
+    let week52change: Double
+    let dividendRate: Double
+    let dividendYield: Double
+    let exDividendDate: String
+    let latestEPS: Double
+    let shortInterest: Int
+    let shortDate: String
+    let sharesOutstanding: Double
+    let float: Float
+    let returnOnEquity: Double
+    let consensusEPS: Double
+    let numberOfEstimates: Int
+    let symbol: String
+    let EBITDA: Double
+//    let revenu: Int
+    let grossProfit: Double
+    let cash: Double
+    let debt: Double
+    let ttmEPS: Double
+    let revenuePerShare: Double
+    let revenuePerEmployee: Double
+    let EPSSurprisePercent: Double
+    let returnOnAssets: Double
+    let profitMargin: Double
+    let priceToSales: Double
+    let priceToBook: Double
+    let day200MovingAvg: Double
+    let day50MovingAvg: Double
+    let institutionPercent: Double
+    let shortRatio: Double
+    let year5ChangePercent: Double
+    let year2ChangePercent: Double
+    let year1ChangePercent: Double
+    let ytdChangePercent: Double
+    let month6ChangePercent: Double
+    let month3ChangePercent: Double
+    let month1ChangePercent: Double
+    let day5ChangePercent: Double
+}
+
+
 
