@@ -1,7 +1,10 @@
 # Bulls-Bears
+
 ### iOS Developer Nanodegree Final Project
 
 ### Overview
+
+__UPDATE__- The Yahoo Finance Api for quotes has been shut down since the Verizon Merge. I am currently transitioning to the iex trading api as well as redesigning the layout and adding new features. Stay Tuned!
 
 Bulls and Bears is a stock quote app that uses the _Yahoo Finance API_ to request stock data for a searched company. This app also has a watchlist feature that uses core data for users to save and display companies their interested in.  
 
@@ -28,5 +31,5 @@ This app has 4 View Controller Scenes:
 Run `pod install` from terminal and open __.xcworkspace__ instead of .xcodeproj
 
 ### Requirements
-* Xcode 8.0
-* Swift 3.0
+* Xcode 9.0
+* Swift 4.0
