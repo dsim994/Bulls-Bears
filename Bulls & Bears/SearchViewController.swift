@@ -10,34 +10,73 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    
+    
+    
+    
 /*-------------------------------------------------------------------------------------------------*\
 \*-------------------------------------------#VARIABLES--------------------------------------------*/
     
+    
+    
+    
+    
     var viewModel = Singleton.shared
     var enteredSymbol = ""
-    var marketNewsArray = [[News]]()
-    var collectionData = [News]()
+//    var marketNewsArray = [[News]]()
+//    var collectionData = [News]()
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 350, height: 20))
+    
+    
+    
+    
+    
+    
     
 /*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------------#OUTLETS---------------------------------------------*/
+    
+    
+    
+    
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    
+    
+    
 /*-------------------------------------------------------------------------------------------------*\
 \*-------------------------------------------#VIEWSETUP--------------------------------------------*/
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeNewsRequest()
+//        makeNewsRequest()
         setSearchBar()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
     }
 }
 
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------------*\
 \*-----------------------------------------#SEARCHBARMETHODS---------------------------------------*/
+
+
+
+
+
 
 extension SearchViewController: UISearchBarDelegate {
     
@@ -64,8 +103,21 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------------*\
 \*---------------------------------------#KEYBOARDMETHODS------------------------------------------*/
+
+
+
+
+
+
+
 
 extension SearchViewController {
     
@@ -81,29 +133,54 @@ extension SearchViewController {
     }
 }
 
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------------*\
 \*-------------------------------------#NETWORKREQUESTMETHODS--------------------------------------*/
 
+
+
+
+
+
+
 extension SearchViewController {
     
-    func makeNewsRequest() {
-        let jsonUrl = "https://api.iextrading.com/1.0/stock/market/news/last/100"
-        let url = URL(string: jsonUrl)
-        URLSession.shared.dataTask(with: url!) { (data, response, err) in
-            guard let data = data else { return }
-            do {
-                let fetchedNews = try JSONDecoder().decode([News].self, from: data)
-                self.marketNewsArray.append(fetchedNews)
-                self.collectionData = self.marketNewsArray[0]
-                
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            } catch {
-                print("Error")
-            }
-        }.resume()
-    }
+    
+    
+    
+//
+//    func makeNewsRequest() {
+//        let jsonUrl = "https://api.iextrading.com/1.0/stock/market/news/last/100"
+//        let url = URL(string: jsonUrl)
+//        URLSession.shared.dataTask(with: url!) { (data, response, err) in
+//            guard let data = data else { return }
+//            do {
+//                let fetchedNews = try JSONDecoder().decode([News].self, from: data)
+//                self.marketNewsArray.append(fetchedNews)
+//                self.collectionData = self.marketNewsArray[0]
+//
+//                DispatchQueue.main.async {
+//                    self.collectionView.reloadData()
+//                }
+//            } catch {
+//                print("Error")
+//            }
+//        }.resume()
+//    }
+//
+    
+    
+    
+    
+    
+    
+    
+    
 
     func makeBatchRequest() {
         let defaultUrl = "https://api.iextrading.com/1.0/stock/"
@@ -133,8 +210,24 @@ extension SearchViewController {
     }
 }
 
+
+
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------------*\
 \*------------------------------------------#SEGUEMETHODS------------------------------------------*/
+
+
+
+
+
+
+
 
 extension SearchViewController {
 
@@ -149,33 +242,43 @@ extension SearchViewController {
     }
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionData.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------*\
+\*------------------------------------#COLLECTIOMVIEWMETHODS---------------------------------------*/
+
+
+//extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return collectionData.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+////        
+////        self.contentView.layer.cornerRadius = 2.0
+////        self.contentView.layer.borderWidth = 1.0
+////        self.contentView.layer.borderColor = UIColor.clear.cgColor
+////        self.contentView.layer.masksToBounds = true
+////        self.layer.shadowColor = UIColor.lightGray.cgColor
+////        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+////        self.layer.shadowRadius = 2.0
+////        self.layer.shadowOpacity = 1.0
+////        self.layer.masksToBounds = false
+////        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+////        
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarketNewsCell", for: indexPath) as! MarketNewsCollectionViewCell
 //        
-//        self.contentView.layer.cornerRadius = 2.0
-//        self.contentView.layer.borderWidth = 1.0
-//        self.contentView.layer.borderColor = UIColor.clear.cgColor
-//        self.contentView.layer.masksToBounds = true
-//        self.layer.shadowColor = UIColor.lightGray.cgColor
-//        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        self.layer.shadowRadius = 2.0
-//        self.layer.shadowOpacity = 1.0
-//        self.layer.masksToBounds = false
-//        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+//        cell.headlineLabel.text = self.collectionData[indexPath.row].headline
+//        cell.summaryLabel.text = self.collectionData[indexPath.row].summary
+//        cell.dateLabel.text = self.collectionData[indexPath.row].datetime
 //        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarketNewsCell", for: indexPath) as! MarketNewsCollectionViewCell
-        
-        cell.headlineLabel.text = self.collectionData[indexPath.row].headline
-        cell.summaryLabel.text = self.collectionData[indexPath.row].summary
-        cell.dateLabel.text = self.collectionData[indexPath.row].datetime
-        
-        return cell
-    }
-}
+//        return cell
+//    }
+//}
 
 
 

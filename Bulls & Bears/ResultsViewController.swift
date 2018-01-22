@@ -10,8 +10,17 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
+    
+    
+    
+    
+    
 /*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------------#VARIABLES-------------------------------------------*/
+    
+    
+    
+    
 
     var viewModel = Singleton.shared
     var companyNameDisplay = String()
@@ -25,9 +34,20 @@ class ResultsViewController: UIViewController {
         "Average Volume", "Market Cap", "PE Ratio"
     ]
     var collectionViewData = [News]()
+    
+    
+    
+    
+    
+    
 
 /*-------------------------------------------------------------------------------------------------*\
 \*---------------------------------------------#OUTLETS--------------------------------------------*/
+    
+    
+    
+    
+    
     
     @IBOutlet weak var latestPriceLabel: UILabel!
     @IBOutlet weak var chartView: UIImageView!
@@ -35,12 +55,21 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var changePercentLabel: UILabel!
-    
     @IBOutlet weak var showStatsButton: UIButton!
     @IBOutlet weak var showNewsButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    /*-------------------------------------------------------------------------------------------------*\
+    
+    
+    
+    
+    
+/*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------------#VIEWSETUP-------------------------------------------*/
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,8 +120,19 @@ class ResultsViewController: UIViewController {
     }
 }
 
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------------*\
 \*----------------------------------------#CONVERTQUOESMETHODS-------------------------------------*/
+
+
+
+
 
 extension ResultsViewController {
     
@@ -127,8 +167,20 @@ extension ResultsViewController {
         changePercentLabel.text! = "(\(percentIndicator)\(roundedChangePercentDisplay)%)"
     }
 }
+
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------------*\
 \*------------------------------------------#TABLEVIEWMETHODS--------------------------------------*/
+
+
+
+
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
@@ -169,6 +221,24 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------*\
+\*--------------------------------------COLLECTIONVIEWMETHODS--------------------------------------*/
+
+
+
+
+
+
+
+
+
 extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -183,6 +253,14 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -13,6 +13,15 @@ class StatsViewController: UIViewController {
     
     
     
+    
+/*-------------------------------------------------------------------------------------------------*\
+\*-------------------------------------------#VARIABLES--------------------------------------------*/
+    
+    
+    
+    
+    
+    
     var viewModel = Singleton.shared
     
     var keyDataTableKeys = [
@@ -25,21 +34,28 @@ class StatsViewController: UIViewController {
     ]
     
     var tradeDataTableKeys = [
-        "Beta", "52 Week High", "52 Week Low", "50-Day Moving Average",
-        "200-Day Moving Average", "ytd Change", "PERatio"
+        "Beta", "PERatio", "52 Week Low", "52 Week High",
+        "ytd Change", "50-Day Moving Average", "200-Day Moving Average"
     ]
     
     var shareStatsTableKeys = [
-        "Shares Outstanding", "Float", "Short Interest", "Short Ratio", "Short Date"
+        "Float", "Shares Outstanding", "Short Ratio", "Short Interest", "Short Date"
     ]
     
     var financialsTableKeys = [
-        "Price To Sale", "Price To Book", "Return On Assets",
-        "Profit Margin", "Revenue Per Share", "Revenue Per Employee",
-        "Cash", "Debt", "Gross Profit", "EBITA", "Return On Equity"
+        "Price To Sales", "Price To Book", "Cash", "Debt", "Gross Profit",
+        "Profit Margin", "Return On Assets", "Return On Equity", "EBITDA",
+        "revenuePerShare", "revenuePerEmployee"
     ]
     
     
+    
+    
+    
+    
+    
+/*-------------------------------------------------------------------------------------------------*\
+\*--------------------------------------------#OUTLETS---------------------------------------------*/
     
     
     
@@ -59,17 +75,24 @@ class StatsViewController: UIViewController {
     
     
     
+
+    
+    
+    
+    
+    
+/*-------------------------------------------------------------------------------------------------*\
+\*-------------------------------------------#VIEWSETUP--------------------------------------------*/
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
     }
 }
-
-
-
-
-
 
 
 extension StatsViewController {
@@ -104,18 +127,16 @@ extension StatsViewController {
     }
 }
 
-//extension Formatter {
-//    static let withSeparator: NumberFormatter = {
-//        let formatter = NumberFormatter()
-//        formatter.groupingSeparator = ","
-//        formatter.numberStyle = .decimal
-//        return formatter
-//    }()
-//}
 
 
 
 
+
+
+
+
+/*-------------------------------------------------------------------------------------------------*\
+\*------------------------------------------#TABLEVIEWMETHODS--------------------------------------*/
 
 
 
@@ -151,6 +172,12 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         
+        
+        
+        
+        
+        
+        
         //Key Data Table View
         let roundedPreviousClose = String(format: "%.2f", self.viewModel.quoteArray[0].previousClose)
         let roundedOpen = String(format: "%.2f", self.viewModel.quoteArray[0].open)
@@ -169,6 +196,12 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         ]
         
         
+        
+        
+        
+        
+        
+        
     
         //Dividend Table View
         let roundedDividendYeild = String(format: "%.2f", self.viewModel.statsArray[0].dividendYield)
@@ -181,84 +214,134 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         
+        
+        
+        
+        
+        
+        
         //Trade Data Table View
-        let roundedPERatio = String(format: "%.2f", self.viewModel.quoteArray[0].peRatio)
         let roundedBeta = String(format: "%.2f", self.viewModel.statsArray[0].beta)
-        let roundedDay200MovingAvg = String(format: "%.2f", self.viewModel.statsArray[0].day200MovingAvg)
-        let roundedDay50MovingAvg = String(format: "%.2f", self.viewModel.statsArray[0].day50MovingAvg)
-        let roundedYtdChangePercent = String(format: "%.2f", self.viewModel.statsArray[0].ytdChangePercent)
-        let roundedWeek52High = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
+        let roundedPERatio = String(format: "%.2f", self.viewModel.quoteArray[0].peRatio)
         let roundedWeek52Low = String(format: "%.2f", self.viewModel.quoteArray[0].week52Low)
+        let roundedWeek52High = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
+        let roundedYtdChangePercent = String(format: "%.2f", self.viewModel.statsArray[0].ytdChangePercent)
+        let roundedDay50MovingAvg = String(format: "%.2f", self.viewModel.statsArray[0].day50MovingAvg)
+        let roundedDay200MovingAvg = String(format: "%.2f", self.viewModel.statsArray[0].day200MovingAvg)
+
         
         let tradeDataTableData = [
-            roundedBeta, roundedWeek52High, roundedWeek52Low, roundedDay50MovingAvg, roundedDay200MovingAvg, roundedYtdChangePercent, roundedPERatio
+            roundedBeta, roundedPERatio, roundedWeek52Low, roundedWeek52High,
+            roundedYtdChangePercent, roundedDay50MovingAvg, roundedDay200MovingAvg
         ]
+        
+        
+        
+        
+        
         
         
         
         //Share Stats Table View
-        let roundedSharesOutstanding = String(format: "%.2fB", self.viewModel.statsArray[0].sharesOutstanding/1e9)
         let roundedFloat = String(format: "%.2fB", self.viewModel.statsArray[0].float/1e9)
+        let roundedSharesOutstanding = String(format: "%.2fB", self.viewModel.statsArray[0].sharesOutstanding/1e9)
+         let roundedShortRatio = String(format: "%.2f", self.viewModel.statsArray[0].shortRatio)
         let roundedShortInterest = String(format: "%.2fB", self.viewModel.statsArray[0].shortInterest/1e9)
         let roundedShortDate = String(format: "%.2f", self.viewModel.statsArray[0].shortDate)
-        let roundedShortRatio = String(format: "%.2f", self.viewModel.statsArray[0].shortRatio)
         
         let shareStatsTableData = [
-            roundedSharesOutstanding, roundedFloat, roundedShortInterest,
-            roundedShortRatio, roundedShortDate
+             roundedFloat, roundedSharesOutstanding,
+             roundedShortRatio, roundedShortInterest, roundedShortDate
         ]
+        
+        
+        
+        
+        
         
         
         
         //Financials Table View
         let priceToSales = String(format: "%.2f", self.viewModel.statsArray[0].priceToSales)
         let priceToBook = String(format: "%.2f", self.viewModel.statsArray[0].priceToBook)
-        let returnOnAssets =  String(format: "%.2f", self.viewModel.statsArray[0].returnOnAssets)
-        let profitMargin = String(format: "%.2f", self.viewModel.statsArray[0].profitMargin)
-        let revenuePerShare = String(format: "%.2f", self.viewModel.statsArray[0].revenuePerShare)
-        let revenuePerEmployee = String(format: "%.2f", self.viewModel.statsArray[0].revenuePerEmployee)
-        let returnOnEquity = String(format: "%.2f", self.viewModel.statsArray[0].returnOnEquity)
-        let EBITDA = String(format: "%.2f", self.viewModel.statsArray[0].EBITDA)
-        //    let revenu: Int
-        let grossProfit = String(format: "%.2f", self.viewModel.statsArray[0].grossProfit)
         let cash = String(format: "%.2f", self.viewModel.statsArray[0].cash)
         let debt = String(format: "%.2f", self.viewModel.statsArray[0].debt)
+        let grossProfit = String(format: "%.2f", self.viewModel.statsArray[0].grossProfit)
+        let profitMargin = String(format: "%.2f", self.viewModel.statsArray[0].profitMargin)
+        let returnOnAssets =  String(format: "%.2f", self.viewModel.statsArray[0].returnOnAssets)
+        let returnOnEquity = String(format: "%.2f", self.viewModel.statsArray[0].returnOnEquity)
+        let EBITDA = String(format: "%.2f", self.viewModel.statsArray[0].EBITDA)
+        let revenuePerShare = String(format: "%.2f", self.viewModel.statsArray[0].revenuePerShare)
+        let revenuePerEmployee = String(format: "%.2f", self.viewModel.statsArray[0].revenuePerEmployee)
+
+        //    let revenu: Int
+        
 
         let financialsTableData = [
-            priceToSales, priceToBook, returnOnAssets, profitMargin, revenuePerShare,
-            revenuePerEmployee, cash, debt, grossProfit, EBITDA, returnOnEquity
+            priceToSales, priceToBook, cash, debt, grossProfit,
+            profitMargin, returnOnAssets, returnOnEquity,
+            EBITDA, revenuePerShare, revenuePerEmployee
         ]
         
         
         
         
+        
+        
+        
+        
+        
         //Assinging Cells To Labels
+
         if tableView == keyDataTableView {
             let cell1 = keyDataTableView.dequeueReusableCell(withIdentifier: "keyDataTableViewCell", for: indexPath) as? StatsTableViewCell
             cell1?.keyDataKeyLabel.text = keyDataTableKeys[indexPath.row]
             cell1?.keyDataValueLabel.text = keyDataTableData[indexPath.row]
             return cell1!
-        } else if tableView == dividendTableView {
+        }
+        
+        
+        
+        
+        else if tableView == dividendTableView {
             let cell2 = dividendTableView.dequeueReusableCell(withIdentifier: "dividendTableViewCell", for: indexPath) as? DividendTableViewCell
             cell2?.dividendKeyLabel.text = dividendTableKeys[indexPath.row]
             cell2?.dividendValueLabel.text = dividendTableData[indexPath.row]
             return cell2!
-        } else if tableView == tradeDataTableView {
+        }
+        
+        
+        
+        
+        else if tableView == tradeDataTableView {
             let cell3 = tradeDataTableView.dequeueReusableCell(withIdentifier: "tradeDataTableViewCell", for: indexPath) as? TradeDataTableViewCell
             cell3?.tradeDataKeyLabel.text = tradeDataTableKeys[indexPath.row]
             cell3?.tradeDataValueLabel.text = tradeDataTableData[indexPath.row]
             return cell3!
-        } else if tableView == shareStatsTableView {
+        }
+        
+        
+        
+        else if tableView == shareStatsTableView {
             let cell4 = shareStatsTableView.dequeueReusableCell(withIdentifier: "shareStatsTableViewCell", for: indexPath) as? ShareStatsTableViewCell
             cell4?.shareStatsKeyLabel.text = shareStatsTableKeys[indexPath.row]
             cell4?.shareStatsValueLabel.text = shareStatsTableData[indexPath.row]
             return cell4!
-        } else if tableView == financialsTableView {
+        }
+        
+        
+        
+        
+        else if tableView == financialsTableView {
             let cell5 = financialsTableView.dequeueReusableCell(withIdentifier: "financialsTableViewCell", for: indexPath) as? FinancialsTableViewCell
             cell5?.financialsKeyLabel.text = financialsTableKeys[indexPath.row]
             cell5?.financialsValueLabel.text = financialsTableData[indexPath.row]
             return cell5!
         }
+        
+        
+        
+        
         return UITableViewCell()
     }
 }

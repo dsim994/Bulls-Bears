@@ -8,11 +8,25 @@
 
 import Foundation
 
+
+
+
+
+
+
+
 struct Batch: Decodable {
     let quote: Quote
     let news: [News]
     let chart: [Chart]
 }
+
+
+
+
+
+
+
 
 
 struct Quote : Decodable {
@@ -36,6 +50,15 @@ struct Quote : Decodable {
     let peRatio: Double
 }
 
+
+
+
+
+
+
+
+
+
 struct News: Decodable {
     let datetime: String
     let headline: String
@@ -44,6 +67,14 @@ struct News: Decodable {
     let summary: String
     let related: String
 }
+
+
+
+
+
+
+
+
 
 struct Chart: Decodable {
     let date: String
@@ -59,6 +90,14 @@ struct Chart: Decodable {
     let label: String
     let changeOverTime: Double
 }
+
+
+
+
+
+
+
+
 
 struct Stats: Decodable {
     
@@ -103,6 +142,16 @@ struct Stats: Decodable {
     let month1ChangePercent: Double
     let day5ChangePercent: Double
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
