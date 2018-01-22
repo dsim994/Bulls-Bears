@@ -1,18 +1,18 @@
 //
-//  StatsTableViewCell.swift
+//  DividendTableViewCell.swift
 //  Bulls & Bears
 //
-//  Created by Dylan Simerly on 1/20/18.
+//  Created by Dylan Simerly on 1/21/18.
 //  Copyright © 2018 dylansimerly. All rights reserved.
 //
 
 import UIKit
 
-class StatsTableViewCell: UITableViewCell {
+class DividendTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var keyDataKeyLabel: UILabel!
-    @IBOutlet weak var keyDataValueLabel: UILabel!
+    @IBOutlet weak var dividendKeyLabel: UILabel!
     
+    @IBOutlet weak var dividendValueLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

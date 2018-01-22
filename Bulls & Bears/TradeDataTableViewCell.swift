@@ -1,18 +1,18 @@
 //
-//  StatsTableViewCell.swift
+//  TradeDataTableViewCell.swift
 //  Bulls & Bears
 //
-//  Created by Dylan Simerly on 1/20/18.
+//  Created by Dylan Simerly on 1/21/18.
 //  Copyright © 2018 dylansimerly. All rights reserved.
 //
 
 import UIKit
 
-class StatsTableViewCell: UITableViewCell {
+class TradeDataTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var keyDataKeyLabel: UILabel!
-    @IBOutlet weak var keyDataValueLabel: UILabel!
+    @IBOutlet weak var tradeDataKeyLabel: UILabel!
     
+    @IBOutlet weak var tradeDataValueLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

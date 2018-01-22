@@ -69,7 +69,7 @@ struct Stats: Decodable {
     let dividendYield: Double
     let exDividendDate: String
     let latestEPS: Double
-    let shortInterest: Int
+    let shortInterest: Double
     let shortDate: String
     let sharesOutstanding: Double
     let float: Float

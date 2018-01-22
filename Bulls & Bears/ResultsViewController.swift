@@ -53,8 +53,8 @@ class ResultsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         self.collectionViewData = self.viewModel.quoteNewsArray[0]
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 20
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 20
         
         DispatchQueue.main.async{
             self.tableView.reloadData()
@@ -74,7 +74,7 @@ class ResultsViewController: UIViewController {
                 let fetchedStats = try JSONDecoder().decode(Stats.self, from: data)
                 print(fetchedStats)
                 self.viewModel.statsArray.append(fetchedStats)
-                print(self.viewModel.statsArray)
+//                print(self.viewModel.statsArray)
                 
                 DispatchQueue.main.async() {
                     self.performSegue(withIdentifier: "showStats", sender: self)

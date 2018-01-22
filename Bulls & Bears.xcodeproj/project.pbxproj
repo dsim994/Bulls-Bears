@@ -18,9 +18,13 @@
 		BC7437381EAC340B001B79D7 /* Bulls___BearsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7437371EAC340B001B79D7 /* Bulls___BearsUITests.swift */; };
 		BC85BD3920144BD100B04E17 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85BD3820144BD100B04E17 /* StatsViewController.swift */; };
 		BC85BD3D20144D9600B04E17 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */; };
+		BCCA382C201556CF00FB3C4C /* TradeDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCA382B201556CF00FB3C4C /* TradeDataTableViewCell.swift */; };
+		BCCA382E201574CE00FB3C4C /* ShareStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCA382D201574CE00FB3C4C /* ShareStatsTableViewCell.swift */; };
+		BCCA383020157A1200FB3C4C /* FinancialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCA382F20157A1200FB3C4C /* FinancialsTableViewCell.swift */; };
 		BCD57483200887A50072E5E6 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD57482200887A50072E5E6 /* ResultsViewController.swift */; };
 		BCD5748D200A0FEE0072E5E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5748C200A0FEE0072E5E6 /* TableViewCell.swift */; };
 		BCD5748F200A1F9E0072E5E6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5748E200A1F9E0072E5E6 /* AppConstants.swift */; };
+		BCDF55FA2014BD7E003E7172 /* DividendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDF55F92014BD7E003E7172 /* DividendTableViewCell.swift */; };
 		BCE35FFC1EAC7E220032EF6A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE35FFB1EAC7E220032EF6A /* Singleton.swift */; };
 		CA28554D502BE6D705561208 /* Pods_Bulls___Bears.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E0B461F22F93297437AB4C /* Pods_Bulls___Bears.framework */; };
 /* End PBXBuildFile section */
@@ -64,9 +68,13 @@
 		BC7437391EAC340B001B79D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC85BD3820144BD100B04E17 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
+		BCCA382B201556CF00FB3C4C /* TradeDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeDataTableViewCell.swift; sourceTree = "<group>"; };
+		BCCA382D201574CE00FB3C4C /* ShareStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareStatsTableViewCell.swift; sourceTree = "<group>"; };
+		BCCA382F20157A1200FB3C4C /* FinancialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialsTableViewCell.swift; sourceTree = "<group>"; };
 		BCD57482200887A50072E5E6 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		BCD5748C200A0FEE0072E5E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BCD5748E200A1F9E0072E5E6 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		BCDF55F92014BD7E003E7172 /* DividendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendTableViewCell.swift; sourceTree = "<group>"; };
 		BCE35FFB1EAC7E220032EF6A /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		CF75844A5201656CDC67F2E9 /* Pods_Bulls___BearsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulls___BearsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				BC7437171EAC340B001B79D7 /* AppDelegate.swift */,
-				BCD5748E200A1F9E0072E5E6 /* AppConstants.swift */,
 				BCE35FEB1EAC7C390032EF6A /* Model */,
 				BCD57493200A96190072E5E6 /* View */,
 				BCE35FE21EAC76F00032EF6A /* Controllers */,
@@ -177,8 +184,12 @@
 			children = (
 				BCD5748C200A0FEE0072E5E6 /* TableViewCell.swift */,
 				BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */,
+				BCDF55F92014BD7E003E7172 /* DividendTableViewCell.swift */,
 				BC367B7D201110EE001D133A /* MarketNewsCollectionViewCell.swift */,
 				BC2D9CFD2012BB2800FB6DBE /* SymbolNewsCollectionViewCell.swift */,
+				BCCA382D201574CE00FB3C4C /* ShareStatsTableViewCell.swift */,
+				BCCA382F20157A1200FB3C4C /* FinancialsTableViewCell.swift */,
+				BCCA382B201556CF00FB3C4C /* TradeDataTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -196,6 +207,7 @@
 		BCE35FEB1EAC7C390032EF6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCD5748E200A1F9E0072E5E6 /* AppConstants.swift */,
 				BCE35FFB1EAC7E220032EF6A /* Singleton.swift */,
 			);
 			name = Model;
@@ -398,6 +410,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDF55FA2014BD7E003E7172 /* DividendTableViewCell.swift in Sources */,
+				BCCA382E201574CE00FB3C4C /* ShareStatsTableViewCell.swift in Sources */,
 				BC367B7E201110EE001D133A /* MarketNewsCollectionViewCell.swift in Sources */,
 				BC85BD3D20144D9600B04E17 /* StatsTableViewCell.swift in Sources */,
 				BC74371A1EAC340B001B79D7 /* SearchViewController.swift in Sources */,
@@ -405,9 +419,11 @@
 				BC2D9CFE2012BB2800FB6DBE /* SymbolNewsCollectionViewCell.swift in Sources */,
 				BCE35FFC1EAC7E220032EF6A /* Singleton.swift in Sources */,
 				BCD5748D200A0FEE0072E5E6 /* TableViewCell.swift in Sources */,
+				BCCA382C201556CF00FB3C4C /* TradeDataTableViewCell.swift in Sources */,
 				BCD5748F200A1F9E0072E5E6 /* AppConstants.swift in Sources */,
 				BC85BD3920144BD100B04E17 /* StatsViewController.swift in Sources */,
 				BCD57483200887A50072E5E6 /* ResultsViewController.swift in Sources */,
+				BCCA383020157A1200FB3C4C /* FinancialsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
