@@ -295,8 +295,8 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
 
         if tableView == keyDataTableView {
             let cell1 = keyDataTableView.dequeueReusableCell(withIdentifier: "keyDataTableViewCell", for: indexPath) as? StatsTableViewCell
-            cell1?.keyDataKeyLabel.text = keyDataTableKeys[indexPath.row]
-            cell1?.keyDataValueLabel.text = keyDataTableData[indexPath.row]
+            cell1?.statsKeyLabel.text = keyDataTableKeys[indexPath.row]
+            cell1?.statsValueLabel.text = keyDataTableData[indexPath.row]
             return cell1!
         }
         

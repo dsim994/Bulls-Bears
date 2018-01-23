@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.810186"
+            timestampString = "538362619.314038"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.810625"
+            timestampString = "538362619.314115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "showNewsPressed(_:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "setView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.810685"
+            timestampString = "538362619.31417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "showNewsPressed(_:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "setView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,331 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.810734"
+            timestampString = "538362619.314216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "showNewsPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.81078"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.810825"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.8108701"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538210837.468128"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "934">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538210837.470857"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "50">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.810914"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.8109601"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.811004"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.811048"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.811093"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538210837.502845"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "4166">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538210837.5071729"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.811139"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538210837.513853"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "4435">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538210837.516453"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "4903">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538210837.518806"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "4934">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.811184"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "showStatsPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538208523.006075"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "1377">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Bulls___Bears.ResultsViewController.showStatsPressed(Any) -&gt; ()"
-                  moduleName = "Bulls &amp; Bears"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dylansimerly/Desktop/Bulls-and-Bears/Bulls%20&amp;%20Bears/ResultsViewController.swift"
-                  timestampString = "538208523.008801"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "3683">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bulls &amp; Bears/ResultsViewController.swift"
-            timestampString = "538312544.811226"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "showStatsPressed(_:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "setView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -393,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.811271"
+            timestampString = "538362619.314751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -471,7 +152,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.811545"
+            timestampString = "538362619.314792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -549,7 +230,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.8118089"
+            timestampString = "538362619.314844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -627,7 +308,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.8120739"
+            timestampString = "538362619.314912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -643,7 +324,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.812341"
+            timestampString = "538362619.314968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -659,7 +340,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.812583"
+            timestampString = "538362619.315009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -675,7 +356,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.812825"
+            timestampString = "538362619.315048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
@@ -691,7 +372,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.813067"
+            timestampString = "538362619.315088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -707,7 +388,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.813308"
+            timestampString = "538362619.315127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "297"
@@ -723,7 +404,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.813549"
+            timestampString = "538362619.315166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "298"
@@ -739,7 +420,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.813791"
+            timestampString = "538362619.3152061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "299"
@@ -755,7 +436,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.814036"
+            timestampString = "538362619.315245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "309"
@@ -771,7 +452,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.81428"
+            timestampString = "538362619.3152829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "308"
@@ -787,7 +468,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.814523"
+            timestampString = "538362619.315335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "307"
@@ -803,7 +484,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.814768"
+            timestampString = "538362619.315376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -851,7 +532,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.8150131"
+            timestampString = "538362619.315416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -867,7 +548,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.8152601"
+            timestampString = "538362619.3154581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -915,7 +596,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.8155"
+            timestampString = "538362619.3154989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -931,7 +612,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.815745"
+            timestampString = "538362619.315541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
@@ -947,7 +628,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.815994"
+            timestampString = "538362619.315581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "317"
@@ -963,7 +644,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.816239"
+            timestampString = "538362619.315621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "318"
@@ -979,7 +660,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulls &amp; Bears/StatsViewController.swift"
-            timestampString = "538312544.816476"
+            timestampString = "538362619.315662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "319"

@@ -8,20 +8,85 @@
 
 import UIKit
 
+
+
+
+
+
 class StatsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var keyDataKeyLabel: UILabel!
-    @IBOutlet weak var keyDataValueLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    @IBOutlet weak var statsKeyLabel: UILabel!
+    @IBOutlet weak var statsValueLabel: UILabel!
 }
+
+
+
+
+
+
+
+
+class DividendTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var dividendKeyLabel: UILabel!
+    @IBOutlet weak var dividendValueLabel: UILabel!
+}
+
+
+
+
+
+
+
+
+class TradeDataTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var tradeDataKeyLabel: UILabel!
+    @IBOutlet weak var tradeDataValueLabel: UILabel!
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class ShareStatsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var shareStatsKeyLabel: UILabel!
+    @IBOutlet weak var shareStatsValueLabel: UILabel!
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+class FinancialsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var financialsKeyLabel: UILabel!
+    @IBOutlet weak var financialsValueLabel: UILabel!
+}
+
+
+
+
+
+
+
+
+

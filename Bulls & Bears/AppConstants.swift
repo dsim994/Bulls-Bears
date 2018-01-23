@@ -37,8 +37,8 @@ struct Quote : Decodable {
     let changePercent: Double
     let previousClose: Double
     let open: Double
-    let iexBidPrice: Double?
-    let iexAskPrice: Double?
+    let iexBidPrice: Double
+    let iexAskPrice: Double
     let high: Double
     let low: Double
     let close: Double

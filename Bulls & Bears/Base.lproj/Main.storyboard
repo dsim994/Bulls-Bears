@@ -186,7 +186,7 @@
                                                         <rect key="frame" x="1" y="30" width="392" height="183.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="TableViewCell" rowHeight="25" id="HNY-Kt-QUl" customClass="TableViewCell" customModule="Bulls___Bears" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="keyDataTableViewCell" rowHeight="25" id="HNY-Kt-QUl" customClass="KeyDataTableViewCell" customModule="Bulls___Bears" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="392" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HNY-Kt-QUl" id="1bI-C9-qpM">
@@ -221,8 +221,8 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <connections>
-                                                                    <outlet property="keyLabel" destination="7A4-Vu-phY" id="he4-dZ-66j"/>
-                                                                    <outlet property="valueLabel" destination="ynA-e1-p6t" id="fUh-9z-2j9"/>
+                                                                    <outlet property="keyDataKeyLabel" destination="7A4-Vu-phY" id="we0-Ej-693"/>
+                                                                    <outlet property="keyDataValueLabel" destination="ynA-e1-p6t" id="0HL-KW-pco"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -383,11 +383,11 @@
                         <outlet property="changePercentLabel" destination="HYo-eg-5vx" id="gWo-8z-wvz"/>
                         <outlet property="chartView" destination="j08-O0-vY2" id="wjM-Th-kVz"/>
                         <outlet property="collectionView" destination="FNb-ne-CSA" id="0oQ-gv-fCz"/>
+                        <outlet property="keyDataTableView" destination="FN7-ck-5Xi" id="vYF-Jj-eEZ"/>
                         <outlet property="latestPriceLabel" destination="gNN-6P-So5" id="Rhg-vw-wKZ"/>
                         <outlet property="showNewsButton" destination="PY2-Bb-5Ht" id="GSc-br-V0r"/>
                         <outlet property="showStatsButton" destination="bRP-cK-VGw" id="2xm-HR-BJS"/>
                         <outlet property="symbolLabel" destination="6yz-Wv-zBP" id="9Iw-ni-DWC"/>
-                        <outlet property="tableView" destination="FN7-ck-5Xi" id="AAf-QD-NMA"/>
                         <segue destination="O0E-BM-ise" kind="show" identifier="showStats" id="pEt-Uu-oRz"/>
                     </connections>
                 </viewController>
@@ -460,8 +460,8 @@
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
-                                                                    <outlet property="keyDataKeyLabel" destination="lGM-lR-c49" id="VOp-FI-mfh"/>
-                                                                    <outlet property="keyDataValueLabel" destination="Vu5-0K-eP5" id="EFw-DH-J89"/>
+                                                                    <outlet property="statsKeyLabel" destination="lGM-lR-c49" id="WFu-CR-cEu"/>
+                                                                    <outlet property="statsValueLabel" destination="Vu5-0K-eP5" id="53Z-8Z-uD6"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -529,8 +529,8 @@
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
-                                                                    <outlet property="dividendKeyLabel" destination="7vz-KM-V8U" id="Jv9-47-f0e"/>
-                                                                    <outlet property="dividendValueLabel" destination="YPd-jW-4Fg" id="Bo0-V0-yzM"/>
+                                                                    <outlet property="dividendKeyLabel" destination="7vz-KM-V8U" id="cCG-97-d8f"/>
+                                                                    <outlet property="dividendValueLabel" destination="YPd-jW-4Fg" id="ypa-fW-ThI"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -597,8 +597,8 @@
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
-                                                                    <outlet property="tradeDataKeyLabel" destination="orH-Tr-EcH" id="vwK-2t-KNC"/>
-                                                                    <outlet property="tradeDataValueLabel" destination="y5c-8B-wKP" id="Uoi-7l-IxG"/>
+                                                                    <outlet property="tradeDataKeyLabel" destination="orH-Tr-EcH" id="c8j-RC-rlV"/>
+                                                                    <outlet property="tradeDataValueLabel" destination="y5c-8B-wKP" id="WfL-pj-u9e"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -666,8 +666,8 @@
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
-                                                                    <outlet property="shareStatsKeyLabel" destination="itZ-as-npm" id="Wep-mu-wU0"/>
-                                                                    <outlet property="shareStatsValueLabel" destination="6Bx-xQ-nyM" id="cZ6-2V-SOB"/>
+                                                                    <outlet property="shareStatsKeyLabel" destination="itZ-as-npm" id="yeB-wW-TCs"/>
+                                                                    <outlet property="shareStatsValueLabel" destination="6Bx-xQ-nyM" id="Ckm-UW-FeF"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -735,8 +735,8 @@
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
-                                                                    <outlet property="financialsKeyLabel" destination="Xn7-7c-Lhm" id="3Pu-Wf-esQ"/>
-                                                                    <outlet property="financialsValueLabel" destination="Jxc-gs-zeI" id="Lfn-2R-1z4"/>
+                                                                    <outlet property="financialsKeyLabel" destination="Xn7-7c-Lhm" id="scN-xx-CH9"/>
+                                                                    <outlet property="financialsValueLabel" destination="Jxc-gs-zeI" id="7xZ-hc-YDq"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
