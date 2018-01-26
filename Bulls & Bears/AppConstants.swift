@@ -24,11 +24,6 @@ struct Batch: Decodable {
 
 
 
-
-
-
-
-
 struct Quote : Decodable {
     let symbol: String
     let companyName: String
@@ -55,10 +50,6 @@ struct Quote : Decodable {
 
 
 
-
-
-
-
 struct News: Decodable {
     let datetime: String
     let headline: String
@@ -67,10 +58,6 @@ struct News: Decodable {
     let summary: String
     let related: String
 }
-
-
-
-
 
 
 
@@ -99,6 +86,33 @@ struct Chart: Decodable {
 
 
 
+struct Root: Decodable {
+    let messages: [Messages]
+    
+}
+struct Messages: Decodable {
+    let id: Int
+    let body: String
+    let created_at: String
+    let user: User
+}
+
+struct User: Decodable {
+    let username: String
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 struct Stats: Decodable {
     
     let companyName: String
@@ -117,7 +131,9 @@ struct Stats: Decodable {
     let numberOfEstimates: Int
     let symbol: String
     let EBITDA: Double
-//    let revenu: Int
+    let peRatioLow: Double
+    let peRatioHigh: Double
+    let revenue: Double
     let grossProfit: Double
     let cash: Double
     let debt: Double
@@ -142,6 +158,7 @@ struct Stats: Decodable {
     let month1ChangePercent: Double
     let day5ChangePercent: Double
 }
+
 
 
 

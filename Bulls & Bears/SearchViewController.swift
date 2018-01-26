@@ -30,7 +30,6 @@ class SearchViewController: UIViewController {
     
     
     
-    
 /*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------------#OUTLETS---------------------------------------------*/
     
@@ -80,11 +79,15 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.delegate = self
         searchBar.sizeToFit()
         searchBar.barStyle = UIBarStyle.blackTranslucent
+        searchBar.placeholder = "Enter Company Ticker"
         navigationItem.titleView = searchBar
         
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor.white
+        textFieldInsideSearchBar?.textAlignment = .center
         
+        
+
         hideKeyboardWhenTappedAround()
     }
     
@@ -96,6 +99,7 @@ extension SearchViewController: UISearchBarDelegate {
        makeBatchRequest()
   
     }
+
 }
 
 
@@ -165,7 +169,7 @@ extension SearchViewController {
                 self.viewModel.quoteArray.append(fetchedBatch.quote)
                 self.viewModel.quoteNewsArray.append(fetchedBatch.news)
                 self.viewModel.quoteChartArray.append(fetchedBatch.chart)
-
+                
                 DispatchQueue.main.async() {
                     self.performSegue(withIdentifier: "showResults", sender: self)
                 }
