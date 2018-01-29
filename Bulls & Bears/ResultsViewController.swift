@@ -34,7 +34,7 @@ class ResultsViewController: UIViewController {
         "Average Volume", "Market Cap", "PE Ratio"
     ]
     var collectionViewData = [News]()
-    var chartData = [Chart]()
+    var keyDataTableData = [String]()
 //    var messagesData = [Messages]()
     
     
@@ -61,6 +61,11 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var showNewsButton: UIButton!
     @IBOutlet weak var newsCollectionView: UICollectionView!
 //    @IBOutlet weak var stockTwitsCollectionView: UICollectionView!
+    
+    
+    
+    
+    
     
     
 /*-------------------------------------------------------------------------------------------------*\
@@ -100,6 +105,7 @@ class ResultsViewController: UIViewController {
 
 
 extension ResultsViewController {
+    
     func setView() {
         
         
@@ -294,30 +300,101 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cell = keyDataTableView.dequeueReusableCell(withIdentifier: "keyDataTableViewCell", for: indexPath) as! KeyDataTableViewCell
         
-        self.chartData = self.viewModel.quoteChartArray[0]
-        
 
-        let roundedPreviousClose = String(format: "%.2f", self.viewModel.quoteArray[0].previousClose)
-        let roundedOpen = String(format: "%.2f", self.viewModel.quoteArray[0].open)
-        let roundedHigh = String(format: "%.2f", self.viewModel.quoteArray[0].high)
-        let roundedLow = String(format: "%.2f", self.viewModel.quoteArray[0].low)
-        let rounded52WeekHigh = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
-        let rounded52WeekLow = String(format: "%.2f", self.viewModel.quoteArray[0].week52Low)
-        let roundedVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].latestVolume/1e6)
-        let roundedAvgVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].avgTotalVolume/1e6)
-        let roundedMarketCap = String(format: "%.2fB", self.viewModel.quoteArray[0].marketCap/1e9)
-        let roundedPERatio = String(format: "%.2f", self.viewModel.quoteArray[0].peRatio)
+        if let previousClose = self.viewModel.quoteArray[0].previousClose {
+            let roundedPreviousClose =  String(format: "%.2f", previousClose)
+            self.keyDataTableData.append(roundedPreviousClose)
+            print(self.keyDataTableData)
+        } else {
+            print("Previous Close Is Null")
+        }
+    
         
+        if let open = self.viewModel.quoteArray[0].open {
+            let roundedOpen = String(format: "%.2f", open)
+            self.keyDataTableData.append(roundedOpen)
+            print(self.keyDataTableData)
+        } else {
+            print("Open Is Null")
+        }
+    
         
+        if let low = self.viewModel.quoteArray[0].low {
+            let roundedLow = String(format: "%.2f", low)
+            self.keyDataTableData.append(roundedLow)
+            print(self.keyDataTableData)
+        } else {
+            print("Low is null")
+        }
+        
+        if let high = self.viewModel.quoteArray[0].high{
+            let roundedHigh = String(format: "%.2f", high)
+            self.keyDataTableData.append(roundedHigh)
+            print(self.keyDataTableData)
+        } else {
+            print("High is null")
+        }
+        
+        if let week52Low = self.viewModel.quoteArray[0].week52Low {
+            let roundedWeek52Low = String(format: "%.2f", week52Low)
+            self.keyDataTableData.append(roundedWeek52Low)
+            print(self.keyDataTableData)
+        } else {
+            print("Week 52 Low Is Null")
+        }
+        
+        if let week52High = self.viewModel.quoteArray[0].week52High {
+            let roundedWeek52High = String(format: "%.2f", week52High)
+            self.keyDataTableData.append(roundedWeek52High)
+            print(self.keyDataTableData)
+        } else {
+            print("Week 52 High Is Null")
+        }
+       
+        if let volume = self.viewModel.quoteArray[0].latestVolume {
+            let roundedVolume = String(format: "%.2fM", volume/1e6)
+            self.keyDataTableData.append(roundedVolume)
+            print(self.keyDataTableData)
+        } else {
+            print("Volume is null")
+        }
+        
+        if let avgVolume = self.viewModel.quoteArray[0].avgTotalVolume {
+            let roundedAvgVolume = String(format: "%.2fM", avgVolume/1e6)
+            self.keyDataTableData.append(roundedAvgVolume)
+            print(self.keyDataTableData)
+        } else {
+            print("Average Volume Is Null")
+        }
+    
+        
+        if let marketCap = self.viewModel.quoteArray[0].marketCap {
+            let roundedMarketCap =  String(format: "%.2fB", marketCap/1e9)
+            self.keyDataTableData.append(roundedMarketCap)
+            print(self.keyDataTableData)
+        } else {
+            print("Market Cap Is Null")
+        }
+    
+        
+        if let peRatio = self.viewModel.quoteArray[0].peRatio {
+            let roundedPERatio = String(format: "%.2f", peRatio)
+            self.keyDataTableData.append(roundedPERatio)
+            print(self.keyDataTableData)
+        } else {
+            print("PE Ratio Is Null")
+        }
+    
+    
 
-        let keyDataTableData = [
-            roundedPreviousClose, roundedOpen, roundedLow, roundedHigh,
-            rounded52WeekLow, rounded52WeekHigh, roundedVolume, roundedAvgVolume,
-            roundedMarketCap, roundedPERatio
-        ]
+//        let keyDataTableData = [
+//            roundedPreviousClose, roundedOpen, roundedLow, roundedHigh,
+//            rounded52WeekLow, rounded52WeekHigh, roundedVolume, roundedAvgVolume,
+//            roundedMarketCap, roundedPERatio
+//        ]
         
         
-        
+        print(self.keyDataTableData)
         
         
 
@@ -396,6 +473,10 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         return UICollectionViewCell()
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        return
     }
 }
 

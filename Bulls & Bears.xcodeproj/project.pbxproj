@@ -174,10 +174,10 @@
 		BCD57493200A96190072E5E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BCD5748C200A0FEE0072E5E6 /* KeyDataTableViewCell.swift */,
-				BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */,
 				BC367B7D201110EE001D133A /* MarketNewsCollectionViewCell.swift */,
+				BCD5748C200A0FEE0072E5E6 /* KeyDataTableViewCell.swift */,
 				BC2D9CFD2012BB2800FB6DBE /* SymbolNewsCollectionViewCell.swift */,
+				BC85BD3C20144D9600B04E17 /* StatsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";

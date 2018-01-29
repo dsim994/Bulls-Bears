@@ -24,6 +24,8 @@ class StatsViewController: UIViewController {
     
     var viewModel = Singleton.shared
     
+    var statsTableData = [String]()
+    
     var statsTableKeys = [
         "Previous Close", "Open", "Low", "High", "52 Week Low", "52 Week High",
         "Volume", "Average Volume", "Market Cap", "PE Ratio"
@@ -128,12 +130,16 @@ extension StatsViewController {
         let roundedLatestPrice = String(format: "%.2f", self.viewModel.quoteArray[0].latestPrice)
         latestPriceLabel.text = roundedLatestPrice
         
-        let roundedBid = String(format: "%.2f", self.viewModel.quoteArray[0].iexBidPrice)
-        bidLabel.text = ("Bid: \(roundedBid)")
-        
-        let roundedAsk = String(format: "%.2f", self.viewModel.quoteArray[0].iexAskPrice)
-        askLabel.text = ("Ask: \(roundedAsk)")
-        
+        if let roundedBid = (self.viewModel.quoteArray[0].iexBidPrice) {
+             bidLabel.text = ("Bid: \(roundedBid)")
+        }else {
+            print("Bid is null")
+        }
+        if let roundedAsk = (self.viewModel.quoteArray[0].iexAskPrice){
+            askLabel.text = ("Ask: \(roundedAsk)")
+        } else {
+            print("Ask is null")
+        }
         
     }
 }
@@ -207,24 +213,94 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         //Key Data Table View
-        let roundedPreviousClose = String(format: "%.2f", self.viewModel.quoteArray[0].previousClose)
-        let roundedOpen = String(format: "%.2f", self.viewModel.quoteArray[0].open)
-        let roundedLow = String(format: "%.2f", self.viewModel.quoteArray[0].low)
-        let roundedHigh = String(format: "%.2f", self.viewModel.quoteArray[0].high)
-        let roundedWeek52Low = String(format: "%.2f", self.viewModel.quoteArray[0].week52Low)
-        let roundedWeek52High = String(format: "%.2f", self.viewModel.quoteArray[0].week52High)
-        let roundedVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].latestVolume/1e6)
-        let roundedAvgVolume = String(format: "%.2fM", self.viewModel.quoteArray[0].avgTotalVolume/1e6)
-        let roundedMarketCap = String(format: "%.2fB", self.viewModel.quoteArray[0].marketCap/1e9)
-        let peRatio = String(format: "%.2f", self.viewModel.quoteArray[0].peRatio)
-        
-        let statsTableData = [
-            roundedPreviousClose, roundedOpen, roundedLow, roundedHigh, roundedWeek52Low,
-            roundedWeek52High, roundedVolume, roundedAvgVolume, roundedMarketCap, peRatio
-        ]
+        if let previousClose = self.viewModel.quoteArray[0].previousClose {
+            let roundedPreviousClose = String(format: "%.2f", previousClose)
+            self.statsTableData.append(roundedPreviousClose)
+            print(statsTableData)
+        } else {
+            print("Previous Close Is Null")
+        }
         
         
+        if let open = self.viewModel.quoteArray[0].open {
+            let roundedOpen = String(format: "%.2f", open)
+            self.statsTableData.append(roundedOpen)
+            print(statsTableData)
+        } else {
+            print("Open Is Null")
+        }
+    
+
+        if let low = self.viewModel.quoteArray[0].low {
+            let roundedLow = String(format: "%.2f", low)
+            self.statsTableData.append(roundedLow)
+            print(statsTableData)
+        } else {
+            print("Low Is Null")
+        }
         
+        if let high = self.viewModel.quoteArray[0].high {
+            let roundedHigh = String(format: "%.2f", high)
+            self.statsTableData.append(roundedHigh)
+            print(statsTableData)
+        } else {
+            print("High Is Null")
+        }
+        
+        if let week52Low = self.viewModel.quoteArray[0].week52Low {
+            let roundedWeek52Low = String(format: "%.2f", week52Low)
+            self.statsTableData.append(roundedWeek52Low)
+            print(statsTableData)
+        } else {
+            print("Week 52 Low Is Null")
+        }
+        
+        if let week52High = self.viewModel.quoteArray[0].week52High {
+            let roundedWeek52High =  String(format: "%.2f", week52High)
+            self.statsTableData.append(roundedWeek52High)
+            print(statsTableData)
+        } else {
+            print("Week 52 High Is Null")
+        }
+        
+        
+        if let volume = self.viewModel.quoteArray[0].latestVolume {
+            let roundedVolume = String(format: "%.2fM", volume/1e6)
+            self.statsTableData.append(roundedVolume)
+            print(statsTableData)
+        } else {
+            print("Volume Is Null")
+        }
+        
+        if let avgVolume = self.viewModel.quoteArray[0].avgTotalVolume {
+            let roundedAvgVolume = String(format: "%.2fM", avgVolume/1e6)
+            self.statsTableData.append(roundedAvgVolume)
+            print(statsTableData)
+        } else {
+            print("Average Volume Is Null")
+        }
+        
+        
+        if let marketCap = self.viewModel.quoteArray[0].marketCap {
+            let roundedMarketCap = String(format: "%.2fB", marketCap/1e9)
+            self.statsTableData.append(roundedMarketCap)
+            print(statsTableData)
+        } else {
+            print("Market Cap Is Null")
+        }
+    
+        
+        if let peRatio = self.viewModel.quoteArray[0].peRatio {
+            let roundedPERatio = String(format: "%.2f", peRatio)
+            self.statsTableData.append(roundedPERatio)
+            print(statsTableData)
+        } else {
+            print("PE Ratio Is Null")
+        }
+    
+        
+        
+        print(self.statsTableData)
 
         
     

@@ -150,8 +150,8 @@ extension SearchViewController {
 extension SearchViewController {
     
     
-    
-    
+
+   
 
     func makeBatchRequest() {
         let defaultUrl = "https://api.iextrading.com/1.0/stock/"

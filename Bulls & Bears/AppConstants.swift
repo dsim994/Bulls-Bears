@@ -24,25 +24,30 @@ struct Batch: Decodable {
 
 
 
+
+
+
+
+
 struct Quote : Decodable {
     let symbol: String
     let companyName: String
     let latestPrice: Double
     let change: Double
     let changePercent: Double
-    let previousClose: Double
-    let open: Double
-    let iexBidPrice: Double
-    let iexAskPrice: Double
-    let high: Double
-    let low: Double
-    let close: Double
-    let week52Low: Double
-    let week52High: Double
-    let latestVolume: Double
-    let avgTotalVolume: Double
-    let marketCap: Double
-    let peRatio: Double
+    let previousClose: Double?
+    let open: Double?
+    let iexBidPrice: Double?
+    let iexAskPrice: Double?
+    let high: Double?
+    let low: Double?
+    let close: Double?
+    let week52Low: Double?
+    let week52High: Double?
+    let latestVolume: Double?
+    let avgTotalVolume: Double?
+    let marketCap: Double?
+    let peRatio: Double?
 }
 
 
@@ -86,22 +91,22 @@ struct Chart: Decodable {
 
 
 
-struct Root: Decodable {
-    let messages: [Messages]
-    
-}
-struct Messages: Decodable {
-    let id: Int
-    let body: String
-    let created_at: String
-    let user: User
-}
-
-struct User: Decodable {
-    let username: String
-}
-
-
+//struct Root: Decodable {
+//    let messages: [Messages]
+//    
+//}
+//struct Messages: Decodable {
+//    let id: Int
+//    let body: String
+//    let created_at: String
+//    let user: User
+//}
+//
+//struct User: Decodable {
+//    let username: String
+//}
+//
+//
 
 
 
@@ -149,14 +154,14 @@ struct Stats: Decodable {
     let day50MovingAvg: Double
     let institutionPercent: Double
     let shortRatio: Double
-    let year5ChangePercent: Double
-    let year2ChangePercent: Double
-    let year1ChangePercent: Double
-    let ytdChangePercent: Double
-    let month6ChangePercent: Double
-    let month3ChangePercent: Double
-    let month1ChangePercent: Double
-    let day5ChangePercent: Double
+//    let year5ChangePercent: Double
+//    let year2ChangePercent: Double
+//    let year1ChangePercent: Double
+//    let ytdChangePercent: Double
+//    let month6ChangePercent: Double
+//    let month3ChangePercent: Double
+//    let month1ChangePercent: Double
+//    let day5ChangePercent: Double
 }
 
 

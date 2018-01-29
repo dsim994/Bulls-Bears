@@ -16,13 +16,13 @@ class MarketNewsCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        summaryLabel.textAlignment = NSTextAlignment.left
+//        summaryLabel.textAlignment = NSTextAlignment.left
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.contentView.autoresizingMask.insert(.flexibleHeight)
-        self.contentView.autoresizingMask.insert(.flexibleWidth)
+//
+//        self.contentView.autoresizingMask.insert(.flexibleHeight)
+//        self.contentView.autoresizingMask.insert(.flexibleWidth)
     }
 }
