@@ -92,12 +92,14 @@ class StatsViewController: UIViewController {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         
     }
 }
+
 
 
 extension StatsViewController {
@@ -216,7 +218,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let previousClose = self.viewModel.quoteArray[0].previousClose {
             let roundedPreviousClose = String(format: "%.2f", previousClose)
             self.statsTableData.append(roundedPreviousClose)
-            print(statsTableData)
         } else {
             print("Previous Close Is Null")
         }
@@ -225,7 +226,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let open = self.viewModel.quoteArray[0].open {
             let roundedOpen = String(format: "%.2f", open)
             self.statsTableData.append(roundedOpen)
-            print(statsTableData)
         } else {
             print("Open Is Null")
         }
@@ -234,7 +234,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let low = self.viewModel.quoteArray[0].low {
             let roundedLow = String(format: "%.2f", low)
             self.statsTableData.append(roundedLow)
-            print(statsTableData)
         } else {
             print("Low Is Null")
         }
@@ -242,7 +241,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let high = self.viewModel.quoteArray[0].high {
             let roundedHigh = String(format: "%.2f", high)
             self.statsTableData.append(roundedHigh)
-            print(statsTableData)
         } else {
             print("High Is Null")
         }
@@ -250,7 +248,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let week52Low = self.viewModel.quoteArray[0].week52Low {
             let roundedWeek52Low = String(format: "%.2f", week52Low)
             self.statsTableData.append(roundedWeek52Low)
-            print(statsTableData)
         } else {
             print("Week 52 Low Is Null")
         }
@@ -258,7 +255,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let week52High = self.viewModel.quoteArray[0].week52High {
             let roundedWeek52High =  String(format: "%.2f", week52High)
             self.statsTableData.append(roundedWeek52High)
-            print(statsTableData)
         } else {
             print("Week 52 High Is Null")
         }
@@ -267,7 +263,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let volume = self.viewModel.quoteArray[0].latestVolume {
             let roundedVolume = String(format: "%.2fM", volume/1e6)
             self.statsTableData.append(roundedVolume)
-            print(statsTableData)
         } else {
             print("Volume Is Null")
         }
@@ -275,7 +270,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let avgVolume = self.viewModel.quoteArray[0].avgTotalVolume {
             let roundedAvgVolume = String(format: "%.2fM", avgVolume/1e6)
             self.statsTableData.append(roundedAvgVolume)
-            print(statsTableData)
         } else {
             print("Average Volume Is Null")
         }
@@ -284,7 +278,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let marketCap = self.viewModel.quoteArray[0].marketCap {
             let roundedMarketCap = String(format: "%.2fB", marketCap/1e9)
             self.statsTableData.append(roundedMarketCap)
-            print(statsTableData)
         } else {
             print("Market Cap Is Null")
         }
@@ -293,14 +286,12 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         if let peRatio = self.viewModel.quoteArray[0].peRatio {
             let roundedPERatio = String(format: "%.2f", peRatio)
             self.statsTableData.append(roundedPERatio)
-            print(statsTableData)
         } else {
             print("PE Ratio Is Null")
         }
     
         
         
-        print(self.statsTableData)
 
         
     
@@ -329,7 +320,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         let roundedDay50MovingAvg = String(format: "%.2f", self.viewModel.statsArray[0].day50MovingAvg)
         let roundedDay200MovingAvg = String(format: "%.2f", self.viewModel.statsArray[0].day200MovingAvg)
 
-        
         let tradeDataTableData = [
             roundedBeta, roundedPERatioLow, roundedPERatioHigh, "\(rounded52WeekChange)%",
             roundedDay50MovingAvg, roundedDay200MovingAvg
@@ -375,8 +365,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         let revenue = String(format: "%.2fB", self.viewModel.statsArray[0].revenue/1e9)
         let revenuePerShare = String(format: "%.2f", self.viewModel.statsArray[0].revenuePerShare)
         let revenuePerEmployee = String(format: "%.2fM", self.viewModel.statsArray[0].revenuePerEmployee/1e6)
-
-        
 
         let financialsTableData = [
             priceToSales, priceToBook, cash, debt, grossProfit,
@@ -429,7 +417,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
             cell4?.shareStatsValueLabel.text = shareStatsTableData[indexPath.row]
             return cell4!
         }
-        
         
         
         

@@ -11,6 +11,12 @@ import UIKit
 
 
 
+class KeyDataTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var keyDataKeyLabel: UILabel!
+    @IBOutlet weak var keyDataValueLabel: UILabel!
+}
+
 
 
 class StatsTableViewCell: UITableViewCell {

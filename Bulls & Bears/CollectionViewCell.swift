@@ -10,11 +10,22 @@ import UIKit
 
 
 
+class MarketNewsCollectionViewCell: UICollectionViewCell {
+    
+//    @IBOutlet weak var headlineLabel: UILabel!
+//    @IBOutlet weak var summaryLabel: UILabel!
+//    @IBOutlet weak var dateLabel: UILabel!
+}
+
+
+
 class SymbolNewsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 }
+
+
 
 
 
@@ -24,3 +35,11 @@ class StockTwitsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var messagesLabel: UILabel!
 }
+
+
+
+
+
+
+
+

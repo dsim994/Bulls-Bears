@@ -194,15 +194,14 @@ extension ResultsViewController {
 
 
 
+
+
 extension ResultsViewController {
     
     
     
     
-    
-    
-    
-    
+
     
 //
 //    func makeStockTwitsRequest() {
@@ -232,15 +231,10 @@ extension ResultsViewController {
     
     
     
-
-    
-    
-    
-    
-    
     
     
     func makeStatsRequest() {
+        
         let defaultUrl = "https://api.iextrading.com/1.0/stock/"
         let statsRequest = "/stats"
         let jsonUrl = ("\(defaultUrl)\(symbolDisplay)\(statsRequest)")
@@ -249,21 +243,24 @@ extension ResultsViewController {
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
             guard let data = data else { return }
             do {
-                print(data)
+                
                 let fetchedStats = try JSONDecoder().decode(Stats.self, from: data)
-                print(fetchedStats)
                 self.viewModel.statsArray.append(fetchedStats)
-                //                print(self.viewModel.statsArray)
                 
                 DispatchQueue.main.async() {
                     self.performSegue(withIdentifier: "showStats", sender: self)
                 }
+                
             }catch {
                 print("Error")
             }
         }.resume()
     }
 }
+
+
+
+
 
 
 
@@ -279,14 +276,11 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
-    
-    
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return keyDataTableKeys.count
     }
-    
-    
     
     
     
@@ -300,11 +294,12 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cell = keyDataTableView.dequeueReusableCell(withIdentifier: "keyDataTableViewCell", for: indexPath) as! KeyDataTableViewCell
         
-
+        
+        
+        
         if let previousClose = self.viewModel.quoteArray[0].previousClose {
             let roundedPreviousClose =  String(format: "%.2f", previousClose)
             self.keyDataTableData.append(roundedPreviousClose)
-            print(self.keyDataTableData)
         } else {
             print("Previous Close Is Null")
         }
@@ -313,7 +308,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let open = self.viewModel.quoteArray[0].open {
             let roundedOpen = String(format: "%.2f", open)
             self.keyDataTableData.append(roundedOpen)
-            print(self.keyDataTableData)
         } else {
             print("Open Is Null")
         }
@@ -322,7 +316,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let low = self.viewModel.quoteArray[0].low {
             let roundedLow = String(format: "%.2f", low)
             self.keyDataTableData.append(roundedLow)
-            print(self.keyDataTableData)
         } else {
             print("Low is null")
         }
@@ -330,7 +323,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let high = self.viewModel.quoteArray[0].high{
             let roundedHigh = String(format: "%.2f", high)
             self.keyDataTableData.append(roundedHigh)
-            print(self.keyDataTableData)
         } else {
             print("High is null")
         }
@@ -338,7 +330,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let week52Low = self.viewModel.quoteArray[0].week52Low {
             let roundedWeek52Low = String(format: "%.2f", week52Low)
             self.keyDataTableData.append(roundedWeek52Low)
-            print(self.keyDataTableData)
         } else {
             print("Week 52 Low Is Null")
         }
@@ -346,7 +337,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let week52High = self.viewModel.quoteArray[0].week52High {
             let roundedWeek52High = String(format: "%.2f", week52High)
             self.keyDataTableData.append(roundedWeek52High)
-            print(self.keyDataTableData)
         } else {
             print("Week 52 High Is Null")
         }
@@ -354,7 +344,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let volume = self.viewModel.quoteArray[0].latestVolume {
             let roundedVolume = String(format: "%.2fM", volume/1e6)
             self.keyDataTableData.append(roundedVolume)
-            print(self.keyDataTableData)
         } else {
             print("Volume is null")
         }
@@ -362,7 +351,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let avgVolume = self.viewModel.quoteArray[0].avgTotalVolume {
             let roundedAvgVolume = String(format: "%.2fM", avgVolume/1e6)
             self.keyDataTableData.append(roundedAvgVolume)
-            print(self.keyDataTableData)
         } else {
             print("Average Volume Is Null")
         }
@@ -371,7 +359,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let marketCap = self.viewModel.quoteArray[0].marketCap {
             let roundedMarketCap =  String(format: "%.2fB", marketCap/1e9)
             self.keyDataTableData.append(roundedMarketCap)
-            print(self.keyDataTableData)
         } else {
             print("Market Cap Is Null")
         }
@@ -380,24 +367,14 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         if let peRatio = self.viewModel.quoteArray[0].peRatio {
             let roundedPERatio = String(format: "%.2f", peRatio)
             self.keyDataTableData.append(roundedPERatio)
-            print(self.keyDataTableData)
         } else {
             print("PE Ratio Is Null")
         }
-    
-    
-
-//        let keyDataTableData = [
-//            roundedPreviousClose, roundedOpen, roundedLow, roundedHigh,
-//            rounded52WeekLow, rounded52WeekHigh, roundedVolume, roundedAvgVolume,
-//            roundedMarketCap, roundedPERatio
-//        ]
-        
-        
-        print(self.keyDataTableData)
         
         
 
+        
+        
         cell.keyDataKeyLabel.text = self.keyDataTableKeys[indexPath.row]
         cell.keyDataValueLabel.text = keyDataTableData[indexPath.row]
         return cell
@@ -411,12 +388,9 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 
+
 /*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------COLLECTIONVIEWMETHODS--------------------------------------*/
-
-
-
-
 
 
 
