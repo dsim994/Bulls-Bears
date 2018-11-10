@@ -24,6 +24,8 @@ class StatsViewController: UIViewController {
     
     var viewModel = Singleton.shared
     
+    
+    
     var statsTableData = [String]()
     
     var statsTableKeys = [
@@ -58,12 +60,6 @@ class StatsViewController: UIViewController {
     
 /*-------------------------------------------------------------------------------------------------*\
 \*--------------------------------------------#OUTLETS---------------------------------------------*/
-    
-    
-    
-    
-    
-    
     
 
     @IBOutlet weak var latestPriceLabel: UILabel!
@@ -141,7 +137,7 @@ extension StatsViewController {
             askLabel.text = ("Ask: \(roundedAsk)")
         } else {
             print("Ask is null")
-        }
+        } 
         
     }
 }
