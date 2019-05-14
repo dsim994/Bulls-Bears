@@ -215,7 +215,6 @@
 				BC7437111EAC340B001B79D7 /* Frameworks */,
 				BC7437121EAC340B001B79D7 /* Resources */,
 				CCD69889503AD16E45DBC98B /* [CP] Embed Pods Frameworks */,
-				2124D9110E9B200D813D9A3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,26 +268,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = dylansimerly;
 				TargetAttributes = {
 					BC7437131EAC340B001B79D7 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = D9F6D6KZ89;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					BC7437271EAC340B001B79D7 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = D9F6D6KZ89;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BC7437131EAC340B001B79D7;
 					};
 					BC7437321EAC340B001B79D7 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = D9F6D6KZ89;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BC7437131EAC340B001B79D7;
 					};
@@ -296,7 +295,7 @@
 			};
 			buildConfigurationList = BC74370F1EAC340B001B79D7 /* Build configuration list for PBXProject "Bulls & Bears" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -342,21 +341,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2124D9110E9B200D813D9A3B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5AF8CA6DB7BDA30CFCE7017D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,7 +365,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -390,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bulls & Bears/Pods-Bulls & Bears-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -586,7 +570,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylansimerly.Bulls---Bears";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -601,7 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylansimerly.Bulls---Bears";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -615,7 +599,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylansimerly.Bulls---BearsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bulls & Bears.app/Bulls & Bears";
 			};
 			name = Debug;
@@ -630,7 +614,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylansimerly.Bulls---BearsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bulls & Bears.app/Bulls & Bears";
 			};
 			name = Release;
@@ -644,7 +628,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylansimerly.Bulls---BearsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Bulls & Bears";
 			};
 			name = Debug;
@@ -658,7 +642,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dylansimerly.Bulls---BearsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Bulls & Bears";
 			};
 			name = Release;
