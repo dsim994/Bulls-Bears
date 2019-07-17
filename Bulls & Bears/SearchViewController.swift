@@ -154,10 +154,11 @@ extension SearchViewController {
    
 
     func makeBatchRequest() {
-        let defaultUrl = "https://api.iextrading.com/1.0/stock/"
-        let batchRequest = "/batch?types=quote,news,chart&range=3m&last=5"
-
-        let jsonUrl = "\(defaultUrl)\(enteredSymbol)\(batchRequest)"
+        
+        let defaultUrl = "https://cloud.iexapis.com/stable/stock/"
+        let token = "/batch?token=pk_32107d0097d54d1cbf38641d2923983c"
+        let batchRequest = "&types=quote,news,chart&range=1m&last=10"
+        let jsonUrl = "\(defaultUrl)\(enteredSymbol)\(token)\(batchRequest)"
         let url = URL(string: jsonUrl)
 
         URLSession.shared.dataTask(with: url!) { (data, resoponse, err) in
@@ -204,11 +205,11 @@ extension SearchViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         let destVC = segue.destination as? ResultsViewController
-        destVC?.companyNameDisplay = self.viewModel.quoteArray[0].companyName
-        destVC?.symbolDisplay = self.viewModel.quoteArray[0].symbol
-        destVC?.latestPriceDisplay = self.viewModel.quoteArray[0].latestPrice
-        destVC?.changeDisplay = self.viewModel.quoteArray[0].change
-        destVC?.changePercentDisplay = self.viewModel.quoteArray[0].changePercent
+        destVC?.companyNameDisplay = self.viewModel.quoteArray[0].companyName!
+        destVC?.symbolDisplay = self.viewModel.quoteArray[0].symbol!
+        destVC?.latestPriceDisplay = self.viewModel.quoteArray[0].latestPrice!
+        destVC?.changeDisplay = self.viewModel.quoteArray[0].change!
+        destVC?.changePercentDisplay = self.viewModel.quoteArray[0].changePercent!
     }
 }
 

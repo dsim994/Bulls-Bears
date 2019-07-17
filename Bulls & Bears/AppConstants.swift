@@ -21,20 +21,12 @@ struct Batch: Decodable {
     let chart: [Chart]
 }
 
-
-
-
-
-
-
-
-
-struct Quote : Decodable {
-    let symbol: String
-    let companyName: String
-    let latestPrice: Double
-    let change: Double
-    let changePercent: Double
+struct Quote: Decodable {
+    let symbol: String?
+    let companyName: String?
+    let latestPrice: Double?
+    let change: Double?
+    let changePercent: Double?
     let previousClose: Double?
     let open: Double?
     let iexBidPrice: Double?
@@ -50,35 +42,30 @@ struct Quote : Decodable {
     let peRatio: Double?
 }
 
-
-
-
-
-
 struct News: Decodable {
-    let datetime: String
+    let datetime: Double
     let headline: String
     let source: String
     let url: String
     let summary: String
     let related: String
+    let image: String
 }
-
-
-
-
 
 struct Chart: Decodable {
     let date: String
     let open: Double
+    let close: Double
     let high: Double
     let low: Double
-    let close: Double
     let volume: Double
-    let unadjustedVolume: Double
+    let uOpen: Double
+    let uClose: Double
+    let uHigh: Double
+    let uLow: Double
+    let uVolume: Double
     let change: Double
     let changePercent: Double
-    let vwap: Double
     let label: String
     let changeOverTime: Double
 }

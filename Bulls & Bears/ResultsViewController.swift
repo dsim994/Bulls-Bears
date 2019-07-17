@@ -433,7 +433,7 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
             let cell = newsCollectionView.dequeueReusableCell(withReuseIdentifier: "symbolNewsCell", for: indexPath) as! SymbolNewsCollectionViewCell
             
             cell.headlineLabel.text = self.collectionViewData[indexPath.row].headline
-            cell.dateLabel.text = self.collectionViewData[indexPath.row].datetime
+//            cell.dateLabel.text = self.collectionViewData[indexPath.row].datetime
             return cell
         } else {
             print("Error")

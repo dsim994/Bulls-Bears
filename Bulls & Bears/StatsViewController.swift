@@ -125,7 +125,7 @@ extension StatsViewController {
             self.financialsTableView.reloadData()
         }
         
-        let roundedLatestPrice = String(format: "%.2f", self.viewModel.quoteArray[0].latestPrice)
+        let roundedLatestPrice = String(format: "%.2f", self.viewModel.quoteArray[0].latestPrice!)
         latestPriceLabel.text = roundedLatestPrice
         
         if let roundedBid = (self.viewModel.quoteArray[0].iexBidPrice) {
