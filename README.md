@@ -12,6 +12,11 @@ This app has 4 View Controller Scenes:
 
 * __CompanyDataProfile__- The user is then presented with the most recent selling price (bid and ask underneath), a financial data chart, a tableView of key data, and another tableView of the 10 most recent news articles for the searched company. Users can click the show more button under the key data tableView and they will be directed to CompanyStats. Clicking the show more button under the news tableView will direct the user to CompanyNews.
 
+* __CompanyStats__-
+
+* __CompanyNews__-
+
+
 
 
 
