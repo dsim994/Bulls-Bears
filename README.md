@@ -12,9 +12,10 @@ This app has 4 View Controller Scenes:
 
 * __CompanyDataProfile__- The user is then presented with the most recent selling price (bid and ask underneath), a financial data chart, a tableView of key data, and another tableView of the 10 most recent news articles for the searched company. Users can click the show more button under the key data tableView and they will be directed to CompanyStats. Clicking the show more button under the news tableView will direct the user to CompanyNews.
 
-* __CompanyStats__- The data for selected company is then displayed in a tableview. If the user wants to add selected company to their watchlist they simply press the +watchlist button and are directed to the Watchlist view while selected company is saved in core data. When the user is finished they can simply back out to the Search view to enter a new company.
+* __CompanyStats__-
 
-* __CompanyNews__- This view allows the user to see the companies they have saved. It can be accessed from the Search view or when a new company is added.
+
+* __CompanyNews__- 
 
 
 
