@@ -2,7 +2,7 @@
 
 ### Overview
 
-Swift application that uses the _IEX Trading API_ to request stock data for a searched company
+Swift application that uses the _IEX Trading API_ to request financial investment data for users searched company
 
 ### Implementation
 
