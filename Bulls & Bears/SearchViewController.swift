@@ -155,6 +155,8 @@ extension SearchViewController {
 
     func makeBatchRequest() {
         
+        emptyArrays()
+        
         let defaultUrl = "https://cloud.iexapis.com/stable/stock/"
         let token = "/batch?token=pk_32107d0097d54d1cbf38641d2923983c"
         let batchRequest = "&types=quote,news,chart&range=1m&last=10"
@@ -215,7 +217,15 @@ extension SearchViewController {
 
 
 
-
+extension SearchViewController {
+    
+    func emptyArrays() {
+        
+        self.viewModel.quoteArray.removeAll()
+        self.viewModel.quoteNewsArray.removeAll()
+        
+    }
+}
 
 
 

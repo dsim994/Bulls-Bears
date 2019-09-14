@@ -295,7 +295,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = keyDataTableView.dequeueReusableCell(withIdentifier: "keyDataTableViewCell", for: indexPath) as! KeyDataTableViewCell
         
         
-        
+        let roundedPriceDisplay = String(format: "%.2f", latestPriceDisplay)
         
         if let previousClose = self.viewModel.quoteArray[0].previousClose {
             let roundedPreviousClose =  String(format: "%.2f", previousClose)
@@ -453,7 +453,6 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
         return
     }
 }
-
 
 
 
