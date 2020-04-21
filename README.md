@@ -1,5 +1,7 @@
 # Stock Tracker
 
+Currently Trying to find a new API!
+
 ### Overview
 
 Swift application that uses the _IEX Trading API_ to request financial investment data for users searched company
